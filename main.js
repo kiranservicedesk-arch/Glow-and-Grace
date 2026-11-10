@@ -1,309 +1,377 @@
 
-/* =====================================================
-   SECUREFENCE - MAIN.JS
-   Active Navigation + Theme + RTL + Mobile Menu
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
-    const htmlRoot = document.documentElement;
 
-    /* ================= CURRENT PAGE ================= */
-    let currentPage =
-        window.location.pathname.split("/").pop().toLowerCase();
+    const root = document.documentElement;
 
-    if (!currentPage || currentPage === "/") {
-        currentPage = "index.html";
-    }
+    const homeButton = document.querySelector(".home-btn");
+    const dropdown = document.querySelector(".dropdown");
 
-    const homePages = ["index.html", "home2.html"];
+    const rtlButton = document.getElementById("rtl-toggle");
+    const themeButton = document.getElementById("theme-toggle");
 
-    /* ================= ACTIVE NAVIGATION ================= */
-    const homeDropdown = document.getElementById("desktopHomeDropdown");
-    const homeButton = document.getElementById("homeDropdownBtn");
-    const desktopMenu = document.getElementById("desktopHomeMenu");
+    const menuButton = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("navLinks");
 
-    const isHomePage = homePages.includes(currentPage);
 
-    // Home remains active on index.html and home2.html
-    if (homeButton) {
-        homeButton.classList.toggle("active", isHomePage);
+    // =====================================
+    // CURRENT PAGE ACTIVE NAVIGATION
+    // =====================================
 
-        if (isHomePage) {
-            homeButton.setAttribute("aria-current", "page");
-        } else {
-            homeButton.removeAttribute("aria-current");
-        }
+    function setActiveNavigation() {
 
-        homeButton.setAttribute("aria-expanded", "false");
-    }
-
-    // Other desktop navigation links
-    document.querySelectorAll(".nav-menu a.nav-link").forEach(function (link) {
-        const linkPage = (link.getAttribute("href") || "")
+        const currentPage = window.location.pathname
             .split("/")
             .pop()
             .toLowerCase();
 
-        const isActive = linkPage === currentPage;
+        const pageMap = {
+            "": "home",
+            "index.html": "home",
+            "home2.html": "home",
+            "about.html": "about",
+            "services.html": "services",
+            "products.html": "products",
+            "blog.html": "blog",
+            "contact.html": "contact"
+        };
 
-        link.classList.toggle("active", isActive);
+        const activePage = pageMap[currentPage] || "";
 
-        if (isActive) {
-            link.setAttribute("aria-current", "page");
-        } else {
+        // Remove previous active classes
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.classList.remove("active");
             link.removeAttribute("aria-current");
-        }
-    });
+        });
 
-    // Highlight Home 1 or Home 2 inside the dropdown
-    if (desktopMenu) {
-        desktopMenu.querySelectorAll("a").forEach(function (link) {
-            const linkPage = (link.getAttribute("href") || "")
-                .split("/")
-                .pop()
-                .toLowerCase();
+        // Highlight matching navigation link
+        document.querySelectorAll(".nav-links a[data-page]").forEach(function (link) {
 
-            if (linkPage === currentPage) {
+            if (link.dataset.page === activePage) {
+
+                link.classList.add("active");
                 link.setAttribute("aria-current", "page");
-            } else {
-                link.removeAttribute("aria-current");
+
             }
+
         });
+
+        // Home dropdown active for both home pages
+        if (activePage === "home" && homeButton) {
+
+            homeButton.classList.add("active");
+            homeButton.setAttribute("aria-current", "page");
+
+        }
+
     }
 
-    // Mobile navigation active state
-    document.querySelectorAll(".mobile-nav-list a").forEach(function (link) {
-        const linkPage = (link.getAttribute("href") || "")
-            .split("/")
-            .pop()
-            .toLowerCase();
+    setActiveNavigation();
 
-        const isActive = linkPage === currentPage;
 
-        link.classList.toggle("active", isActive);
+    // =====================================
+    // HOME DROPDOWN
+    // =====================================
 
-        if (isActive) {
-            link.setAttribute("aria-current", "page");
-        } else {
-            link.removeAttribute("aria-current");
-        }
-    });
+    if (homeButton && dropdown) {
 
-    /* ================= HOME DROPDOWN ================= */
-    function closeHomeDropdown() {
-        if (!homeDropdown || !homeButton) return;
-
-        homeDropdown.classList.remove("open");
+        homeButton.setAttribute("aria-haspopup", "true");
         homeButton.setAttribute("aria-expanded", "false");
 
-        // Preserve active Home state on both home pages
-        homeButton.classList.toggle(
-            "active",
-            homePages.includes(currentPage)
-        );
-    }
-
-    if (homeDropdown && homeButton) {
         homeButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
             event.stopPropagation();
 
-            const isOpen = homeDropdown.classList.toggle("open");
+            const isOpen = dropdown.classList.toggle("active");
 
-            homeButton.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        if (desktopMenu) {
-            desktopMenu.addEventListener("click", function (event) {
-                event.stopPropagation();
-            });
-        }
-
-        document.addEventListener("click", function (event) {
-            if (!homeDropdown.contains(event.target)) {
-                closeHomeDropdown();
-            }
-        });
-    }
-    
-
-    /* ================= MOBILE MENU ================= */
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileIcon = document.getElementById("mobileIcon");
-
-    function closeMobileMenu() {
-        if (!mobileToggle || !mobileMenu) return;
-
-        mobileMenu.classList.remove("show");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        mobileToggle.setAttribute("aria-label", "Open navigation");
-
-        if (mobileIcon) {
-            mobileIcon.className = "fa-solid fa-bars";
-        }
-    }
-
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener("click", function (event) {
-            event.stopPropagation();
-
-            const isOpen = mobileMenu.classList.toggle("show");
-
-            mobileToggle.setAttribute("aria-expanded", String(isOpen));
-            mobileToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation" : "Open navigation"
+            homeButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
             );
 
-            if (mobileIcon) {
-                mobileIcon.className = isOpen
-                    ? "fa-solid fa-xmark"
-                    : "fa-solid fa-bars";
-            }
         });
 
-        mobileMenu.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", closeMobileMenu);
-        });
-
+        // Close dropdown when clicking outside
         document.addEventListener("click", function (event) {
-            if (
-                mobileMenu.classList.contains("show") &&
-                !mobileMenu.contains(event.target) &&
-                !mobileToggle.contains(event.target)
-            ) {
-                closeMobileMenu();
+
+            if (!dropdown.contains(event.target)) {
+
+                dropdown.classList.remove("active");
+
+                homeButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
             }
+
         });
+
+        // Close dropdown after selecting a page
+        dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                dropdown.classList.remove("active");
+
+                homeButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
     }
 
-    /* ================= THEME TOGGLE ================= */
-    const themeToggle = document.getElementById("themeToggle");
-    const themeIcon = document.getElementById("themeIcon");
 
-    function updateThemeButton(theme) {
-        if (!themeToggle || !themeIcon) return;
+    // =====================================
+    // MOBILE MENU
+    // =====================================
 
-        if (theme === "dark") {
-            themeIcon.className = "fa-solid fa-sun";
-            themeToggle.setAttribute("aria-label", "Switch to light mode");
-            themeToggle.setAttribute("title", "Switch to light mode");
+    if (menuButton && navLinks) {
+
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+
+        menuButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const isOpen = navLinks.classList.toggle("show");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+        // Close mobile menu after clicking page links
+        navLinks.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                // Keep dropdown open/close behavior separate
+                if (link.classList.contains("home-btn")) {
+                    return;
+                }
+
+                navLinks.classList.remove("show");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuButton.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            });
+
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function (event) {
+
+            if (
+                !navLinks.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+
+                navLinks.classList.remove("show");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuButton.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            }
+
+        });
+
+    }
+
+
+    // =====================================
+    // RTL / LTR TOGGLE
+    // =====================================
+
+    function updateDirectionButton() {
+
+        if (!rtlButton) return;
+
+        if (root.dir === "rtl") {
+
+            rtlButton.setAttribute(
+                "aria-label",
+                "Switch to LTR"
+            );
+
+            rtlButton.setAttribute(
+                "title",
+                "Switch to LTR"
+            );
+
         } else {
-            themeIcon.className = "fa-solid fa-moon";
-            themeToggle.setAttribute("aria-label", "Switch to dark mode");
-            themeToggle.setAttribute("title", "Switch to dark mode");
+
+            rtlButton.setAttribute(
+                "aria-label",
+                "Switch to RTL"
+            );
+
+            rtlButton.setAttribute(
+                "title",
+                "Switch to RTL"
+            );
+
         }
+
     }
 
-    if (themeToggle && themeIcon) {
-        updateThemeButton(htmlRoot.getAttribute("data-theme") || "light");
+    // Restore saved direction
+    const savedDirection = localStorage.getItem("glowGraceDirection");
 
-        themeToggle.addEventListener("click", function () {
-            const currentTheme =
-                htmlRoot.getAttribute("data-theme") || "light";
+    if (savedDirection === "rtl" || savedDirection === "ltr") {
+        root.dir = savedDirection;
+    }
+
+    updateDirectionButton();
+
+    if (rtlButton) {
+
+        rtlButton.addEventListener("click", function () {
+
+            root.dir = root.dir === "ltr" ? "rtl" : "ltr";
+
+            localStorage.setItem(
+                "glowGraceDirection",
+                root.dir
+            );
+
+            updateDirectionButton();
+
+        });
+
+    }
+
+
+    // =====================================
+    // DARK / LIGHT MODE
+    // =====================================
+
+    function updateThemeButton() {
+
+        if (!themeButton) return;
+
+        if (root.dataset.theme === "dark") {
+
+            themeButton.innerHTML =
+                '<i class="fa-solid fa-sun"></i>';
+
+            themeButton.setAttribute(
+                "aria-label",
+                "Switch to light mode"
+            );
+
+            themeButton.setAttribute(
+                "title",
+                "Switch to light mode"
+            );
+
+        } else {
+
+            themeButton.innerHTML =
+                '<i class="fa-solid fa-moon"></i>';
+
+            themeButton.setAttribute(
+                "aria-label",
+                "Switch to dark mode"
+            );
+
+            themeButton.setAttribute(
+                "title",
+                "Switch to dark mode"
+            );
+
+        }
+
+    }
+
+    // Restore saved theme
+    const savedTheme = localStorage.getItem("glowGraceTheme");
+
+    if (savedTheme === "dark" || savedTheme === "light") {
+        root.dataset.theme = savedTheme;
+    }
+
+    updateThemeButton();
+
+    if (themeButton) {
+
+        themeButton.addEventListener("click", function () {
 
             const newTheme =
-                currentTheme === "light" ? "dark" : "light";
+                root.dataset.theme === "light" ? "dark" : "light";
 
-            htmlRoot.setAttribute("data-theme", newTheme);
-            updateThemeButton(newTheme);
+            root.dataset.theme = newTheme;
+
+            localStorage.setItem(
+                "glowGraceTheme",
+                newTheme
+            );
+
+            updateThemeButton();
+
         });
+
     }
 
-    /* ================= RTL / LTR TOGGLE ================= */
-    const rtlToggle = document.getElementById("rtlToggle");
-    const rtlText = document.getElementById("rtlText");
 
-    function updateDirectionButton(direction) {
-        if (!rtlToggle || !rtlText) return;
+    // =====================================
+    // CONTACT FORM
+    // =====================================
 
-        rtlText.textContent = direction === "rtl" ? "LTR" : "RTL";
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
 
-        rtlToggle.setAttribute(
-            "aria-label",
-            direction === "rtl"
-                ? "Switch to left-to-right direction"
-                : "Switch to right-to-left direction"
-        );
+    if (contactForm && formMessage) {
 
-        rtlToggle.setAttribute(
-            "title",
-            direction === "rtl" ? "Switch to LTR" : "Switch to RTL"
-        );
-    }
+        contactForm.addEventListener("submit", function (event) {
 
-    if (rtlToggle && rtlText) {
-        updateDirectionButton(htmlRoot.getAttribute("dir") || "ltr");
+            event.preventDefault();
 
-        rtlToggle.addEventListener("click", function () {
-            const currentDirection =
-                htmlRoot.getAttribute("dir") || "ltr";
+            formMessage.textContent =
+                "Thank you! Your message has been submitted.";
 
-            const newDirection =
-                currentDirection === "rtl" ? "ltr" : "rtl";
+            contactForm.reset();
 
-            htmlRoot.setAttribute("dir", newDirection);
-            updateDirectionButton(newDirection);
         });
+
     }
 
-    /* ================= HEADER SCROLL SHADOW ================= */
-    const siteHeader = document.getElementById("siteHeader");
 
-    function updateHeaderShadow() {
-        if (!siteHeader) return;
-
-        siteHeader.classList.toggle("scrolled", window.scrollY > 10);
-    }
-
-    updateHeaderShadow();
-
-    window.addEventListener("scroll", updateHeaderShadow, {
-        passive: true
-    });
-
-    /* ================= ESCAPE KEY ================= */
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeHomeDropdown();
-            closeMobileMenu();
-        }
-    });
 });
-
-/* HOME DROPDOWN CLICK FIX */
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.getElementById("desktopHomeDropdown");
-    const button = document.getElementById("homeDropdownBtn");
-    const menu = document.getElementById("desktopHomeMenu");
-
-    if (!dropdown || !button || !menu) {
-        console.warn("Home dropdown elements were not found.");
-        return;
-    }
-
-    button.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        const isOpen = dropdown.classList.toggle("open");
-        button.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    document.addEventListener("click", function (event) {
-        if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove("open");
-            button.setAttribute("aria-expanded", "false");
-        }
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            dropdown.classList.remove("open");
-            button.setAttribute("aria-expanded", "false");
-            button.focus();
-        }
-    });
-});
-

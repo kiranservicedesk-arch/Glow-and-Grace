@@ -2,1221 +2,1416 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Premium Fencing Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="main.css">
-<link rel="icon" type="image/png" sizes="64x64" href="Securelogo-removebg-preview.png">
+    <title>Glow & Grace | Skincare & Beauty</title>
 
-<style>
+    <link rel="icon" type="image/png" href="Images/g&glogo1.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="services.css">
+    <script src="main.js"></script>
+    <script src="services.js"></script>
 
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-/* ================= SERVICES HERO ================= */
-
-/* ================= SERVICES HERO ================= */
-.services-hero {
-    min-height: 560px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background: var(--bg-dark);
-}
-
-.services-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(51, 75, 110, 0.94) 0%,
-            rgba(237, 238, 240, 0.76) 48%,
-            rgba(9, 73, 201, 0.2) 100%
-        ),
-        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwy9OgzqCu07ks8613Ai4r3OR4ddTseGKeJv0glJp9ng&s=10")
-        center/cover;
-    animation: heroZoom 14s ease-in-out infinite alternate;
-}
-
-.services-hero::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    height: 110px;
-    background: linear-gradient(transparent, var(--bg-dark));
-    z-index: -1;
-}
-
-.services-hero-content {
-    max-width: 760px;
-    padding: 90px 0 115px;
-    animation: heroTextIn .9s ease both;
-}
-
-.services-hero h1 {
-    font: 700 clamp(38px,5.6vw,72px)/1.12 var(--font-heading);
-    color: var(--text-light);
-    margin: 15px 0 22px;
-    letter-spacing: -.8px;
-}
-
-.services-hero p {
-    max-width: 620px;
-    color: #d2d8e1;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 30px;
-}
-
-.services-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-/* ================= SERVICES SECTION ================= */
-.services-section {
-    padding: 86px 0;
-}
-
-.section-heading h2 {
-    font: 700 clamp(28px,3.5vw,43px)/1.25 var(--font-heading);
-    color: var(--text-light);
-    margin: 12px 0;
-}
-
-.section-heading p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-/* ================= SERVICE CARDS ================= */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
-    gap: 24px;
-}
-
-.service-card {
-    height: 100%;
-    background: var(--bg-card);
-    border: 1px solid var(--accent-border);
-    border-radius: 7px;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-7px);
-    border-color: var(--gold-primary);
-    box-shadow: var(--shadow);
-}
-
-.card-image-wrap {
-    height: 225px;
-    overflow: hidden;
-    background: var(--bg-dark);
-}
-
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .65s ease;
-}
-
-.service-card:hover .card-image {
-    transform: scale(1.06);
-}
-
-.card-content {
-    padding: 25px;
-}
-
-.service-icon {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--accent-border);
-    background: var(--soft-bg);
-    color: var(--gold-primary);
-    border-radius: 5px;
-    font-size: 20px;
-    margin-bottom: 17px;
-}
-
-.card-content h3 {
-    font: 700 19px/1.4 var(--font-heading);
-    color: var(--text-light);
-    margin-bottom: 12px;
-}
-
-.card-content p {
-    min-height: 76px;
-    color: var(--text-muted);
-    font-size: 13px;
-    line-height: 1.9;
-    margin-bottom: 17px;
-}
-
-.text-link {
-    display: inline-flex;
-    gap: 9px;
-    align-items: center;
-    color: var(--gold-primary);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.text-link i {
-    transition: transform .3s;
-}
-
-.text-link:hover i {
-    transform: translateX(5px);
-}
-
-/* ================= FEATURE SECTION ================= */
-.feature-section {
-    background: var(--bg-card);
-    border-top: 1px solid var(--accent-border);
-    border-bottom: 1px solid var(--accent-border);
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 55px;
-}
-
-.feature-image {
-    min-height: 420px;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    background: var(--bg-dark);
-}
-
-.feature-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 420px;
-    object-fit: cover;
-    display: block;
-    transition: transform .7s ease;
-}
-
-.feature-image:hover img {
-    transform: scale(1.06);
-}
-
-.feature-copy h2 {
-    font: 700 clamp(28px,3vw,42px)/1.25 var(--font-heading);
-    color: var(--text-light);
-    margin: 14px 0 18px;
-}
-
-.feature-copy > p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.95;
-    margin-bottom: 24px;
-}
-
-.feature-list {
-    display: grid;
-    gap: 15px;
-    margin: 25px 0 30px;
-}
-
-.feature-list li {
-    display: flex;
-    gap: 12px;
-    color: var(--text-muted);
-    font-size: 13px;
-    align-items: flex-start;
-}
-
-.feature-list i {
-    color: var(--gold-primary);
-    margin-top: 5px;
-}
-
-/* ================= PROCESS ================= */
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
-    gap: 20px;
-}
-
-.process-step {
-    padding: 26px 22px;
-    border: 1px solid var(--accent-border);
-    background: var(--bg-card);
-    border-radius: 7px;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.process-step:hover {
-    transform: translateY(-7px);
-    border-color: var(--gold-primary);
-}
-
-.process-number {
-    font: 700 36px/1 var(--font-heading);
-    color: var(--gold-primary);
-    margin-bottom: 22px;
-}
-
-.process-step h3 {
-    font: 700 17px var(--font-heading);
-    color: var(--text-light);
-    margin-bottom: 12px;
-}
-
-.process-step p {
-    color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.9;
-}
-
-/* ================= PROJECT GALLERY ================= */
-.project-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 18px;
-}
-
-.project-tile {
-    height: 300px;
-    border-radius: 7px;
-    overflow: hidden;
-    position: relative;
-    background: var(--bg-card);
-}
-
-.project-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .65s ease;
-}
-
-.project-tile:hover img {
-    transform: scale(1.08);
-}
-
-.project-tile::after {
-    content: "";
-    position: absolute;
-    inset: 35% 0 0;
-    background: linear-gradient(transparent,rgba(5,8,13,.88));
-}
-
-.project-caption {
-    position: absolute;
-    z-index: 1;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-}
-
-.project-caption span {
-    color: var(--gold-light);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.project-caption h3 {
-    color: #fff;
-    font: 700 19px var(--font-heading);
-    margin-top: 5px;
-}
-
-/* ================= CTA ================= */
-.services-cta {
-    padding: 70px 0;
-    background:
-        linear-gradient(120deg,rgba(212,175,55,.14),transparent 60%),
-        var(--bg-card);
-    border-top: 1px solid var(--accent-border);
-    border-bottom: 1px solid var(--accent-border);
-}
-
-.cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.cta-inner h2 {
-    font: 700 clamp(27px,3.2vw,40px)/1.25 var(--font-heading);
-    color: var(--text-light);
-    margin: 10px 0;
-}
-
-.cta-inner p {
-    color: var(--text-muted);
-    max-width: 660px;
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-/* ================= SERVICES ANIMATIONS ================= */
-.reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-delay-1 {
-    transition-delay: .12s;
-}
-
-.reveal-delay-2 {
-    transition-delay: .24s;
-}
-
-.reveal-delay-3 {
-    transition-delay: .36s;
-}
-
-@keyframes heroZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
-}
-
-@keyframes heroTextIn {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ================= SERVICES RTL ================= */
-html[dir="rtl"] .text-link:hover i {
-    transform: translateX(-5px);
-}
-
-html[dir="rtl"] .services-hero::before {
-    background:
-        linear-gradient(
-            270deg,
-            rgba(7,10,15,.94) 0%,
-            rgba(7,10,15,.76) 48%,
-            rgba(7,10,15,.2) 100%
-        ),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-}
-
-html[dir="rtl"] .project-caption {
-    text-align: right;
-}
-
-/* ================= SERVICES RESPONSIVE ================= */
-@media (max-width: 950px) {
-    .services-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-    }
-
-    .feature-grid {
-        gap: 32px;
-    }
-
-    .process-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-    }
-
-    .project-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-    }
-
-    .project-tile:first-child {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 620px) {
-    .services-hero {
-        min-height: 510px;
-    }
-
-    .services-hero-content {
-        padding: 70px 0 95px;
-    }
-
-    .services-hero h1 {
-        font-size: clamp(36px,9vw,53px);
-    }
-
-    .services-hero p {
-        font-size: 13px;
-    }
-
-    .services-hero-actions {
-        gap: 10px;
-    }
-
-    .services-section {
-        padding: 65px 0;
-    }
-
-    .services-grid,
-    .feature-grid,
-    .process-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-tile:first-child {
-        grid-column: auto;
-    }
-
-    .project-tile {
-        height: 260px;
-    }
-
-    .feature-image,
-    .feature-image img {
-        min-height: 300px;
-    }
-
-    .cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .services-hero::before,
-    .services-hero-content,
-    .reveal,
-    .service-card,
-    .card-image,
-    .feature-image img,
-    .process-step,
-    .project-tile img {
-        animation: none !important;
-        transition: none !important;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
- <!-- HEADER -->
-    <header class="site-header" id="siteHeader">
-        <div class="container header-container">
-            <a href="index.html" class="brand-logo" aria-label="SecureFence Home">
-                <div class="logo-icon">
-                    <img src="Securelogo-removebg-preview.png" alt="Logo">
-                </div>
-                <div class="logo-text">
-                    SECUREFENCE
-                    <span>REPAIR & INSTALLATION</span>
-                </div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <nav class="nav-bar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <img src="Images/g&glogo1.png" alt="Glow & Grace Logo">
+            </div>
+
+            <div class="brand-title">
+                <h1>GLOW <span>& GRACE</span></h1>
+                <p>SKINCARE • BEAUTY • WELLNESS</p>
+            </div>
+
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li class="dropdown">
+
+                <a href="index.html" class="home-btn" id="homeDropdownBtn" data-page="home">
+                    Home
+                    <span class="caret">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                </a>
+
+                <ul class="dropdown-menu" id="homeDropdown">
+                    <li><a href="index.html">Home Classic</a></li>
+                    <li><a href="home2.html">Home Standard</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="about.html" class="nav-link" data-page="about">About Us</a></li>
+            <li><a href="services.html" class="nav-link" data-page="services">Skincare</a></li>
+            <li><a href="products.html" class="nav-link" data-page="products">Products</a></li>
+            <li><a href="blog.html" class="nav-link" data-page="blog">Blogs</a></li>
+            <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+
+        </ul>
+
+        <div class="toggles">
+
+            <button class="utility-toggle" id="rtl-toggle"
+                aria-label="Toggle RTL">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </button>
+
+            <button class="utility-toggle" id="theme-toggle"
+                aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="booking.html" class="primary-btn">
+                Login
             </a>
 
-            <!-- DESKTOP NAVIGATION -->
-            <div class="nav-wrapper">
-                <nav aria-label="Main navigation">
-                    <ul class="nav-menu">
-                        <li class="home-dropdown" id="desktopHomeDropdown">
-                            <button class="home-dropdown-btn" type="button" aria-expanded="false" aria-controls="desktopHomeMenu">
-                                Home <i class="fa-solid fa-chevron-down chevron"></i>
-                            </button>
-                            <ul class="home-dropdown-menu" id="desktopHomeMenu">
-                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home 1</a></li>
-                                <li><a href="home2.html"><i class="fa-solid fa-house-chimney"></i> Home 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="products.html" class="nav-link">Products</a></li>
-                        <li><a href="services.html" class="nav-link active">Services</a></li>
-                        <li><a href="blog.html" class="nav-link">Blog</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <button class="menu-toggle" id="menu-toggle"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <!-- HEADER ACTIONS (CONTROLS + LOGIN) -->
-            <div class="header-actions">
-                <!-- Theme and RTL Controls placed here -->
-                <div class="header-controls">
-                    <button class="control-btn" id="themeToggle" type="button" aria-label="Switch to light mode" title="Toggle theme">
-                        <i class="fa-solid fa-sun" id="themeIcon" aria-hidden="true"></i>
-                    </button>
-
-                    <button class="control-btn" id="rtlToggle" type="button" aria-label="Switch text direction" title="Toggle text direction">
-                        <span id="rtlText">RTL</span>
-                    </button>
-                </div>
-
-                <a href="login.html" class="btn-login">Login</a>
-
-                <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open navigation" aria-expanded="false">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
         </div>
-    </header>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="container">
-            <nav aria-label="Mobile navigation">
-                <ul class="mobile-nav-list">
-                    <li><a href="index.html" class="nav-link">Home 1</a></li>
-                    <li><a href="home2.html" class="nav-link">Home 2</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="products.html" class="nav-link">Products</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    </nav>
 
- 
+</header>
 
 
-<!-- ================= SECTION 1: HERO ================= -->
-<section class="services-hero" id="servicesHome">
-    <div class="container">
-        <div class="services-hero-content">
-           <!--- <span class="eyebrow" style="color: gold;">
-                <i class="fa-solid fa-shield-halved"></i>
-                SECUREFENCE • PROFESSIONAL FENCING
-            </span>-->
+<!-- ================= HERO SECTION ================= -->
 
-            <h1>Built to Protect.<br>
-                <span class="gold-text">Designed to Last.</span>
+<main>
+    
+<!-- =====================================
+     SKIN QUIZ HERO SECTION
+     GLOW & GRACE
+===================================== -->
+
+<section class="skinquiz-hero">
+
+    <div class="skinquiz-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="skinquiz-content">
+
+            <span class="skinquiz-eyebrow">
+                YOUR PERSONAL SKINCARE JOURNEY
+            </span>
+
+            <h1>
+                Discover What Your
+                <span>Skin Truly Needs</span>
             </h1>
 
-            <p style="color: black;">
-                Premium fence installation and dependable repairs, delivered
-                with thoughtful craftsmanship. From timeless privacy fencing
-                to secure gates, we help protect the places that matter most.
+            <p>
+                Every skin is unique. Answer a few simple
+                questions about your skin type, concerns
+                and daily habits to discover a skincare
+                routine that suits your individual needs.
             </p>
 
-            <div class="services-hero-actions">
-                <a href="contact.html" class="btn btn-primary">
-                    Request a Free Quote
+            <div class="skinquiz-buttons">
+
+                <a href="#skin-quiz-form"
+                   class="skinquiz-primary-btn">
+                    Start Your Skin Quiz
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <span class="skinquiz-duration">
+                    Takes approximately 2–3 minutes
+                </span>
+
+            </div>
+
+            <div class="skinquiz-highlights">
+
+                <div class="skinquiz-highlight">
+                    <i class="fas fa-user-check"></i>
+                    <span>Personalized Insights</span>
+                </div>
+
+                <div class="skinquiz-highlight">
+                    <i class="fas fa-spa"></i>
+                    <span>Skin-Focused Guidance</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="skinquiz-image">
+
+            <img src="Images/sqh1.jpg"
+                 alt="Personalized skincare and natural beauty">
+
+            <div class="skinquiz-image-card">
+
+                <span>YOUR SKIN. YOUR ROUTINE.</span>
+
+                <h3>
+                    Beauty Begins
+                    With Understanding.
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SECTION 2 - PERSONAL SKIN PROFILE
+========================================= -->
+
+<section class="skin-profile-section" id="skin-quiz-form">
+
+    <div class="skin-profile-container">
+
+        <div class="skin-profile-heading">
+            <span class="skin-profile-label">LET'S GET TO KNOW YOU</span>
+
+            <h2>Tell Us About Your Skin</h2>
+
+            <p>
+                Every skin is unique. Share a few details about your skin
+                so we can understand your needs and guide you towards
+                a suitable skincare routine.
+            </p>
+        </div>
+
+        <form class="skin-profile-form" id="skinProfileForm">
+
+            <div class="skin-form-top">
+                <div>
+                    <span class="skin-step">STEP 01</span>
+                    <h3>Your Skin Profile</h3>
+                </div>
+
+                <span class="skin-step-count">1 of 4</span>
+            </div>
+
+            <div class="skin-form-grid">
+
+                <!-- Age Range -->
+                <div class="skin-form-group">
+                    <label for="skinAge">What is your age range?</label>
+
+                    <select id="skinAge" name="age" required>
+                        <option value="">Select your age range</option>
+                        <option value="Under 18">Under 18</option>
+                        <option value="18-24">18–24</option>
+                        <option value="25-34">25–34</option>
+                        <option value="35-44">35–44</option>
+                        <option value="45-54">45–54</option>
+                        <option value="55+">55+</option>
+                    </select>
+                </div>
+
+                <!-- Skin Type -->
+                <div class="skin-form-group">
+                    <label for="skinType">How would you describe your skin?</label>
+
+                    <select id="skinType" name="skinType" required>
+                        <option value="">Choose your skin type</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Dry">Dry</option>
+                        <option value="Oily">Oily</option>
+                        <option value="Combination">Combination</option>
+                        <option value="Sensitive">Sensitive</option>
+                        <option value="Not Sure">I'm not sure</option>
+                    </select>
+                </div>
+
+                <!-- Current Routine -->
+                <div class="skin-form-group">
+                    <label for="skinRoutine">How often do you follow a skincare routine?</label>
+
+                    <select id="skinRoutine" name="routine" required>
+                        <option value="">Select an option</option>
+                        <option value="Daily">Every day</option>
+                        <option value="Sometimes">Sometimes</option>
+                        <option value="Rarely">Rarely</option>
+                        <option value="Beginner">I'm new to skincare</option>
+                    </select>
+                </div>
+
+                <!-- Skin Sensitivity -->
+                <div class="skin-form-group">
+                    <label for="skinSensitivity">Does your skin react easily to products?</label>
+
+                    <select id="skinSensitivity" name="sensitivity" required>
+                        <option value="">Select an option</option>
+                        <option value="Often">Yes, often</option>
+                        <option value="Sometimes">Sometimes</option>
+                        <option value="Rarely">Rarely</option>
+                        <option value="Never">No, never</option>
+                        <option value="Not Sure">Not sure</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="skin-profile-note">
+                <span class="skin-note-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </span>
+
+                <p>
+                    Your answers help us understand your skincare preferences
+                    and provide more relevant routine suggestions.
+                </p>
+            </div>
+
+            <div class="skin-form-actions">
+                <button type="reset" class="skin-reset-btn">
+                    Clear Answers
+                </button>
+
+                <button type="button" class="skin-next-btn"
+                    onclick="goToSkinConcerns()">
+                    Continue
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
-               <!---- <a href="#ourServices" class="btn btn-secondary">
-                    Explore Our Services-->
-                </a>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SECTION 3 - SKIN CONCERNS
+========================================= -->
+
+<section class="skin-concerns-section" id="skin-concerns">
+
+    <div class="skin-concerns-container">
+
+        <div class="skin-concerns-heading">
+            <span>UNDERSTANDING YOUR SKIN</span>
+            <h2>What Are Your Skin Concerns?</h2>
+            <p>
+                Select the skin concerns you would like to improve.
+                You can choose more than one option to help us
+                understand your skincare needs.
+            </p>
+        </div>
+
+        <div class="skin-concerns-card">
+
+            <div class="concerns-top">
+                <div>
+                    <span class="concerns-step">STEP 02</span>
+                    <h3>Choose Your Skin Concerns</h3>
+                </div>
+                <span class="concerns-count">2 of 4</span>
+            </div>
+
+            <p class="concerns-instruction">
+                Select all that apply to your skin.
+            </p>
+
+            <div class="skin-concerns-grid">
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Acne and Breakouts">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        <strong>Acne & Breakouts</strong>
+                        <small>Frequent pimples and blemishes</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Dark Spots">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-sun"></i>
+                        <strong>Dark Spots</strong>
+                        <small>Visible spots and uneven marks</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Pigmentation">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-palette"></i>
+                        <strong>Pigmentation</strong>
+                        <small>Uneven skin tone and patches</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Dryness">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-droplet"></i>
+                        <strong>Dryness</strong>
+                        <small>Flaky, tight or dehydrated skin</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Fine Lines">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-leaf"></i>
+                        <strong>Fine Lines</strong>
+                        <small>Early signs of skin ageing</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Dullness">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-regular fa-star"></i>
+                        <strong>Dullness</strong>
+                        <small>Lack of natural-looking radiance</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Large Pores">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                        <strong>Visible Pores</strong>
+                        <small>Noticeable or enlarged pores</small>
+                    </span>
+                </label>
+
+                <label class="concern-option">
+                    <input type="checkbox" name="skinConcerns" value="Redness and Sensitivity">
+                    <span class="concern-check"></span>
+                    <span class="concern-content">
+                        <i class="fa-solid fa-heart"></i>
+                        <strong>Redness & Sensitivity</strong>
+                        <small>Skin that feels easily irritated</small>
+                    </span>
+                </label>
+
+            </div>
+
+            <div class="concerns-selection-info">
+                <span id="selectedConcernCount">0 concerns selected</span>
+                <button type="button" id="clearConcerns">Clear Selection</button>
+            </div>
+
+            <div class="concerns-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                    Not experiencing any of these? You can continue
+                    without selecting a concern.
+                </p>
+            </div>
+
+            <div class="concerns-actions">
+                <button type="button" class="concerns-back-btn"
+                    onclick="document.getElementById('skin-quiz-form').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </button>
+
+                <button type="button" class="concerns-next-btn"
+                    onclick="goToSkinHabits()">
+                    Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SECTION 4 - SKIN LIFESTYLE & HABITS
+========================================= -->
+
+<section class="skin-habits-section" id="skin-habits">
+
+    <div class="skin-habits-container">
+
+        <div class="skin-habits-heading">
+            <span>YOUR DAILY WELLNESS</span>
+            <h2>Let's Understand Your Lifestyle</h2>
+            <p>
+                Your daily habits can influence how your skin looks and feels.
+                Tell us a little about your routine to help us personalize
+                your skincare recommendations.
+            </p>
+        </div>
+
+        <div class="skin-habits-card">
+
+            <div class="habits-top">
+                <div>
+                    <span class="habits-step">STEP 03</span>
+                    <h3>Your Lifestyle & Habits</h3>
+                </div>
+                <span class="habits-count">3 of 4</span>
+            </div>
+
+            <div class="habits-grid">
+
+                <!-- Water Intake -->
+                <div class="habit-group">
+                    <div class="habit-question">
+                        <span class="habit-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </span>
+                        <div>
+                            <h4>How much water do you drink daily?</h4>
+                            <p>Choose your approximate daily intake.</p>
+                        </div>
+                    </div>
+
+                    <div class="habit-options">
+                        <label>
+                            <input type="radio" name="waterIntake" value="Less than 1 litre" required>
+                            <span>Less than 1 litre</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="waterIntake" value="1-2 litres">
+                            <span>1–2 litres</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="waterIntake" value="2-3 litres">
+                            <span>2–3 litres</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="waterIntake" value="More than 3 litres">
+                            <span>More than 3 litres</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sleep -->
+                <div class="habit-group">
+                    <div class="habit-question">
+                        <span class="habit-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </span>
+                        <div>
+                            <h4>How many hours do you sleep?</h4>
+                            <p>Think about your average night of sleep.</p>
+                        </div>
+                    </div>
+
+                    <div class="habit-options">
+                        <label>
+                            <input type="radio" name="sleepHours" value="Less than 5 hours" required>
+                            <span>Less than 5 hours</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sleepHours" value="5-6 hours">
+                            <span>5–6 hours</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sleepHours" value="7-8 hours">
+                            <span>7–8 hours</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sleepHours" value="More than 8 hours">
+                            <span>More than 8 hours</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sun Exposure -->
+                <div class="habit-group">
+                    <div class="habit-question">
+                        <span class="habit-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                        <div>
+                            <h4>How often are you exposed to sunlight?</h4>
+                            <p>Consider your outdoor activities.</p>
+                        </div>
+                    </div>
+
+                    <div class="habit-options">
+                        <label>
+                            <input type="radio" name="sunExposure" value="Rarely" required>
+                            <span>Rarely</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunExposure" value="Occasionally">
+                            <span>Occasionally</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunExposure" value="Daily for short periods">
+                            <span>Daily, for short periods</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunExposure" value="Several hours daily">
+                            <span>Several hours daily</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sunscreen -->
+                <div class="habit-group">
+                    <div class="habit-question">
+                        <span class="habit-icon">
+                            <i class="fa-solid fa-shield"></i>
+                        </span>
+                        <div>
+                            <h4>How often do you use sunscreen?</h4>
+                            <p>Tell us about your sun protection habits.</p>
+                        </div>
+                    </div>
+
+                    <div class="habit-options">
+                        <label>
+                            <input type="radio" name="sunscreenUse" value="Every day" required>
+                            <span>Every day</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunscreenUse" value="Only when outdoors">
+                            <span>Only when outdoors</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunscreenUse" value="Occasionally">
+                            <span>Occasionally</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sunscreenUse" value="Never">
+                            <span>Never</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Additional Lifestyle -->
+            <div class="habit-extra">
+                <label for="skinLifestyle">
+                    How would you describe your daily lifestyle?
+                </label>
+
+                <select id="skinLifestyle" name="lifestyle" required>
+                    <option value="">Choose your lifestyle</option>
+                    <option value="Mostly indoors">Mostly indoors</option>
+                    <option value="Mostly outdoors">Mostly outdoors</option>
+                    <option value="Active lifestyle">Active and physically active</option>
+                    <option value="Busy schedule">Busy and irregular schedule</option>
+                    <option value="Balanced lifestyle">Balanced lifestyle</option>
+                </select>
+            </div>
+
+            <div class="habits-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                    These answers help us understand your daily habits.
+                    They are not a medical assessment or diagnosis.
+                </p>
+            </div>
+
+            <div class="habits-actions">
+
+                <button type="button" class="habits-back-btn"
+                    onclick="document.getElementById('skin-concerns').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </button>
+
+                <button type="button" class="habits-next-btn"
+                    onclick="goToSkinPreferences()">
+                    Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SECTION 5 - SKINCARE PREFERENCES
+========================================= -->
+
+<section class="skin-preferences-section" id="skin-preferences">
+
+    <div class="skin-preferences-container">
+
+        <div class="skin-preferences-heading">
+            <span>MADE FOR YOUR SKIN</span>
+            <h2>What Works Best for You?</h2>
+            <p>
+                Everyone has different skincare preferences.
+                Tell us what you enjoy using and what you want
+                your skincare routine to achieve.
+            </p>
+        </div>
+
+        <div class="skin-preferences-card">
+
+            <div class="preferences-top">
+                <div>
+                    <span class="preferences-step">STEP 04</span>
+                    <h3>Your Skincare Preferences</h3>
+                </div>
+                <span class="preferences-count">4 of 4</span>
+            </div>
+
+            <!-- Product Texture -->
+            <div class="preference-group">
+
+                <div class="preference-question">
+                    <h4>1. Which product texture do you prefer?</h4>
+                    <p>Select the texture you enjoy most.</p>
+                </div>
+
+                <div class="preference-options">
+
+                    <label class="preference-option">
+                        <input type="radio" name="productTexture" value="Lightweight Gel" required>
+                        <span class="preference-option-content">
+                            <i class="fa-solid fa-water"></i>
+                            <strong>Lightweight Gel</strong>
+                            <small>Fresh and light feel</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-option">
+                        <input type="radio" name="productTexture" value="Cream Based">
+                        <span class="preference-option-content">
+                            <i class="fa-solid fa-droplet"></i>
+                            <strong>Rich Cream</strong>
+                            <small>Comfortable and nourishing feel</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-option">
+                        <input type="radio" name="productTexture" value="Serum Based">
+                        <span class="preference-option-content">
+                            <i class="fa-solid fa-flask"></i>
+                            <strong>Lightweight Serum</strong>
+                            <small>Thin and easy to layer</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-option">
+                        <input type="radio" name="productTexture" value="No Preference">
+                        <span class="preference-option-content">
+                            <i class="fa-solid fa-spa"></i>
+                            <strong>No Preference</strong>
+                            <small>Open to different textures</small>
+                        </span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Routine Preference -->
+            <div class="preference-group">
+
+                <div class="preference-question">
+                    <h4>2. What kind of skincare routine do you prefer?</h4>
+                    <p>Choose a routine that suits your daily schedule.</p>
+                </div>
+
+                <div class="preference-select-grid">
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="routineType" value="Simple Routine" required>
+                        <span>
+                            <strong>Simple Routine</strong>
+                            <small>2–3 essential steps</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="routineType" value="Complete Routine">
+                        <span>
+                            <strong>Complete Routine</strong>
+                            <small>Multiple skincare steps</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="routineType" value="Flexible Routine">
+                        <span>
+                            <strong>Flexible Routine</strong>
+                            <small>Depends on my daily needs</small>
+                        </span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Ingredient Preference -->
+            <div class="preference-group">
+
+                <div class="preference-question">
+                    <h4>3. Which ingredients interest you?</h4>
+                    <p>You can select multiple ingredients.</p>
+                </div>
+
+                <div class="ingredient-options">
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Vitamin C">
+                        <span>Vitamin C</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Hyaluronic Acid">
+                        <span>Hyaluronic Acid</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Niacinamide">
+                        <span>Niacinamide</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Aloe Vera">
+                        <span>Aloe Vera</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Ceramides">
+                        <span>Ceramides</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Retinol">
+                        <span>Retinol</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="Peptides">
+                        <span>Peptides</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="ingredients" value="No Preference">
+                        <span>No Preference</span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Main Goal -->
+            <div class="preference-group">
+
+                <div class="preference-question">
+                    <h4>4. What is your main skincare goal?</h4>
+                    <p>Choose the result you would most like to focus on.</p>
+                </div>
+
+                <div class="preference-select-grid">
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="skinGoal" value="Hydrated Skin" required>
+                        <span>
+                            <strong>Hydrated Skin</strong>
+                            <small>Improve skin hydration</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="skinGoal" value="Clearer Looking Skin">
+                        <span>
+                            <strong>Clearer-Looking Skin</strong>
+                            <small>Focus on blemish-prone skin</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="skinGoal" value="Even Skin Tone">
+                        <span>
+                            <strong>Even Skin Tone</strong>
+                            <small>Improve the appearance of uneven tone</small>
+                        </span>
+                    </label>
+
+                    <label class="preference-select-option">
+                        <input type="radio" name="skinGoal" value="Healthy Skin Glow">
+                        <span>
+                            <strong>Healthy-Looking Glow</strong>
+                            <small>Support a radiant appearance</small>
+                        </span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="preference-extra">
+                <label for="skinExtraNotes">
+                    Anything else you would like us to know?
+                    <small>Optional</small>
+                </label>
+
+                <textarea
+                    id="skinExtraNotes"
+                    name="extraNotes"
+                    rows="4"
+                    placeholder="Share any additional skincare preferences..."
+                ></textarea>
+            </div>
+
+            <!-- Note -->
+            <div class="preferences-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                    Your preferences help us suggest a routine that
+                    better matches your interests and daily lifestyle.
+                </p>
+            </div>
+
+            <!-- Actions -->
+            <div class="preferences-actions">
+
+                <button type="button" class="preferences-back-btn"
+                    onclick="document.getElementById('skin-habits').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </button>
+
+              <button type="button" onclick="generateSkinResult()">
+    View My Skin Results
+</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SECTION 6 - PERSONALIZED SKIN RESULTS
+========================================= -->
+
+<section class="skin-results-section" id="skin-results">
+
+    <div class="skin-results-container">
+
+        <div class="skin-results-heading">
+            <span>YOUR PERSONALIZED SKINCARE GUIDE</span>
+            <h2>Your Skin, Your Unique Routine</h2>
+            <p>
+                Based on your answers, here is a personalized starting
+                point to help you build a skincare routine.
+            </p>
+        </div>
+
+        <!-- Result Welcome -->
+        <div class="results-welcome">
+            <div class="results-welcome-content">
+                <span class="results-eyebrow">YOUR SKIN PROFILE IS READY</span>
+                <h3>Let's Give Your Skin the Care It Deserves</h3>
+                <p>
+                    Explore your skin profile and discover a simple routine
+                    based on your preferences and skincare goals.
+                </p>
+            </div>
+
+            <div class="results-welcome-icon">
+                <i class="fa-solid fa-spa"></i>
             </div>
         </div>
+
+        <!-- Skin Profile Summary -->
+        <div class="results-profile-card">
+
+            <div class="results-section-title">
+                <span>01</span>
+                <div>
+                    <h3>Your Skin Profile</h3>
+                    <p>A summary of the information you shared.</p>
+                </div>
+            </div>
+
+            <div class="results-profile-grid">
+
+                <div class="results-profile-item">
+                    <span>Skin Type</span>
+                    <strong id="resultSkinType">Not available</strong>
+                </div>
+
+                <div class="results-profile-item">
+                    <span>Age Range</span>
+                    <strong id="resultAge">Not available</strong>
+                </div>
+
+                <div class="results-profile-item">
+                    <span>Daily Routine</span>
+                    <strong id="resultRoutine">Not available</strong>
+                </div>
+
+                <div class="results-profile-item">
+                    <span>Skin Sensitivity</span>
+                    <strong id="resultSensitivity">Not available</strong>
+                </div>
+
+                <div class="results-profile-item">
+                    <span>Main Skincare Goal</span>
+                    <strong id="resultGoal">Not available</strong>
+                </div>
+
+                <div class="results-profile-item">
+                    <span>Preferred Texture</span>
+                    <strong id="resultTexture">Not available</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Skin Concerns -->
+        <div class="results-concerns-card">
+
+            <div class="results-section-title">
+                <span>02</span>
+                <div>
+                    <h3>Your Selected Skin Concerns</h3>
+                    <p>These are the areas you would like to focus on.</p>
+                </div>
+            </div>
+
+            <div class="results-concern-list" id="resultConcerns">
+                <span class="result-tag">No specific concerns selected</span>
+            </div>
+
+        </div>
+
+        <!-- Personalized Routine -->
+        <div class="results-routine-card">
+
+            <div class="results-section-title">
+                <span>03</span>
+                <div>
+                    <h3>Your Suggested Daily Routine</h3>
+                    <p>A simple routine based on your skin profile and preferences.</p>
+                </div>
+            </div>
+
+            <div class="results-routine-grid">
+
+                <div class="routine-column">
+                    <div class="routine-heading">
+                        <i class="fa-solid fa-sun"></i>
+                        <h4>Morning Routine</h4>
+                    </div>
+
+                    <div id="morningRoutineList" class="routine-list">
+                        <p>Complete the quiz to view your routine.</p>
+                    </div>
+                </div>
+
+                <div class="routine-column">
+                    <div class="routine-heading evening-heading">
+                        <i class="fa-solid fa-moon"></i>
+                        <h4>Evening Routine</h4>
+                    </div>
+
+                    <div id="eveningRoutineList" class="routine-list">
+                        <p>Complete the quiz to view your routine.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Ingredient Preferences -->
+        <div class="results-ingredients-card">
+
+            <div class="results-section-title">
+                <span>04</span>
+                <div>
+                    <h3>Your Ingredient Interests</h3>
+                    <p>Ingredients you selected as interesting to you.</p>
+                </div>
+            </div>
+
+            <div class="results-ingredient-list" id="resultIngredients">
+                <span class="result-tag">No ingredients selected</span>
+            </div>
+
+        </div>
+
+        <!-- Lifestyle Summary -->
+        <div class="results-lifestyle-card">
+
+            <div class="results-section-title">
+                <span>05</span>
+                <div>
+                    <h3>Your Lifestyle Overview</h3>
+                    <p>Small daily habits are part of your skincare journey.</p>
+                </div>
+            </div>
+
+            <div class="results-lifestyle-grid">
+
+                <div>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>Water Intake</span>
+                    <strong id="resultWater">Not available</strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Sleep</span>
+                    <strong id="resultSleep">Not available</strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-sun"></i>
+                    <span>Sun Exposure</span>
+                    <strong id="resultSun">Not available</strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield"></i>
+                    <span>Sunscreen</span>
+                    <strong id="resultSunscreen">Not available</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Personalized Tips -->
+        <div class="results-tips-card">
+
+            <div class="results-section-title">
+                <span>06</span>
+                <div>
+                    <h3>Your Skincare Tips</h3>
+                    <p>Simple habits to support your skincare routine.</p>
+                </div>
+            </div>
+
+            <div id="resultTips" class="results-tips-list">
+                <p>Complete the quiz to receive your skincare tips.</p>
+            </div>
+
+        </div>
+
+        <!-- Final CTA -->
+        <div class="results-final-cta">
+
+            <span>YOUR JOURNEY STARTS HERE</span>
+
+            <h3>Consistency Is the Secret to Better Skin Habits</h3>
+
+            <p>
+                Start with a gentle routine, pay attention to how your
+                skin responds, and make changes gradually.
+            </p>
+
+            <div class="results-cta-buttons">
+                <button type="button" onclick="window.print()"
+                    class="results-print-btn">
+                    <i class="fa-solid fa-print"></i>
+                    Print My Results
+                </button>
+
+                <button type="button" onclick="restartSkinQuiz()"
+                    class="results-restart-btn">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Retake Skin Quiz
+                </button>
+            </div>
+
+        </div>
+
+        <p class="results-disclaimer">
+            These suggestions are general skincare guidance, not a medical
+            diagnosis or treatment plan. Introduce new products gradually
+            and patch test before regular use. Consult a qualified
+            dermatologist for persistent irritation or skin concerns.
+        </p>
+
     </div>
+
 </section>
 
-<!-- ================= SECTION 2: SIX SERVICES ================= -->
-<section class="services-section" id="ourServices">
-    <div class="container">
 
-        <div class="section-heading reveal">
-            <span class="eyebrow">WHAT WE DO</span>
-            <h2>Complete Fencing <span class="gold-text">Solutions</span></h2>
+<!-- =========================================
+     SECTION 7 - NEXT SKINCARE STEPS
+========================================= -->
+
+<section class="next-skincare-section">
+
+    <div class="next-skincare-container">
+
+        <div class="next-skincare-heading">
+            <span class="next-skincare-label">
+                YOUR JOURNEY STARTS HERE
+            </span>
+
+            <h2>Take the Next Step Towards Healthier-Looking Skin</h2>
+
             <p>
-                Carefully selected materials, precise installation and
-                practical repair solutions for residential and commercial
-                properties.
+                Building a skincare routine is a journey.
+                Start with simple habits, choose products that suit
+                your preferences, and give your skin time to adjust.
             </p>
         </div>
 
-        <div class="services-grid">
+        <div class="next-skincare-grid">
 
-            <article class="card service-card reveal">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb6rOFvwK9-uQJ_RqgdMq4xhue2B1GqocQhXK53EuzTw&s=10"
-                         alt="Elegant residential property" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-house"></i></div>
-                    <h3>Residential Fencing</h3>
-                    <p>Enhance privacy, curb appeal and peace of mind with fencing designed around your home and outdoor space.</p>
-                    <a href="sd.html" class="text-link">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
+            <!-- Step 1 -->
+            <div class="next-skincare-card">
 
-            <article class="card service-card reveal reveal-delay-1">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExpI3omT-gO7maOCse79ZgCKAY-uDFiV1qO2vHMTEBg&s=10"
-                         alt="Modern commercial architecture" loading="lazy">
+                <div class="next-skincare-icon">
+                    <i class="fa-solid fa-list-check"></i>
                 </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-                    <h3>Commercial Security Fencing</h3>
-                    <p>Reliable perimeter solutions for workplaces, retail properties, facilities and other commercial sites.</p>
-                    <a href="sd.html" class="text-link">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
 
-            <article class="card service-card reveal reveal-delay-2">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pYatmF-asasNm8-saSWPxwYOroPDahACYAfElUMueg&s=10"
-                         alt="Contemporary home and garden" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-tree"></i></div>
-                    <h3>Wood &amp; Privacy Fences</h3>
-                    <p>Classic timber style and secluded outdoor living, with finishes chosen to complement your property.</p>
-                    <a href="sd.html" class="text-link">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
+                <span class="next-step-number">01</span>
 
-            <article class="card service-card reveal">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://www.cld-systems.com/wp-content/uploads/2022/12/decorative-fencing-007.jpg"
-                         alt="Decorative modern fencing" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
-                    <h3>Metal &amp; Decorative Fences</h3>
-                    <p>Elegant metal fencing that balances strong boundaries with a clean, architectural appearance.</p>
-                    <a href="sd.html" class="text-link">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
+                <h3>Follow Your Routine</h3>
 
-            <article class="card service-card reveal reveal-delay-1">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGnlCaMRpcoUT9zFlucq_QjnKqoxuB09dNudjpWIhtBA&s"
-                         alt="Landscaped residential property" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                    <h3>Fence Repair &amp; Restoration</h3>
-                    <p>Repair loose panels, damaged posts, leaning sections and worn fittings to help extend your fence's life.</p>
-                    <a href="sd.html" class="text-link">Book a repair <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
+                <p>
+                    Use your personalized morning and evening routine
+                    consistently to build healthy skincare habits.
+                </p>
 
-            <article class="card service-card reveal reveal-delay-2">
-                <div class="card-image-wrap">
-                    <img class="card-image"
-                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi8eikrjlxjMNLoUvfMeHtX9uG9DG079aEpqX6pqsG4g&s=10"
-                         alt="Modern entrance and property exterior" loading="lazy">
+            </div>
+
+            <!-- Step 2 -->
+            <div class="next-skincare-card">
+
+                <div class="next-skincare-icon">
+                    <i class="fa-solid fa-droplet"></i>
                 </div>
-                <div class="card-content">
-                    <div class="service-icon"><i class="fa-solid fa-door-open"></i></div>
-                    <h3>Gate Installation &amp; Repairs</h3>
-                    <p>Complete your entryway with a well-fitted gate, dependable hardware and smooth everyday operation.</p>
-                    <a href="sd.html" class="text-link">Plan your gate <i class="fa-solid fa-arrow-right"></i></a>
+
+                <span class="next-step-number">02</span>
+
+                <h3>Choose Suitable Products</h3>
+
+                <p>
+                    Explore gentle skincare products that match
+                    your skin type, concerns, and preferences.
+                </p>
+
+            </div>
+
+            <!-- Step 3 -->
+            <div class="next-skincare-card">
+
+                <div class="next-skincare-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
                 </div>
-            </article>
+
+                <span class="next-step-number">03</span>
+
+                <h3>Stay Consistent</h3>
+
+                <p>
+                    Give your routine time. Introduce products gradually
+                    and observe how your skin responds.
+                </p>
+
+            </div>
 
         </div>
-    </div>
-</section>
 
-<!-- ================= SECTION 3: INSTALLATION & REPAIR ================= -->
-<section class="services-section feature-section" id="installationRepair">
-    <div class="container feature-grid">
+        <div class="next-skincare-cta">
 
-        <div class="feature-image reveal">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5l9veS9pZI9oS0wKKzN1wlfWlZ1GoPxVvXdqx9ZN5g&s=10"
-                 alt="Premium home exterior and landscaping" loading="lazy">
-        </div>
+            <div class="next-cta-content">
+                <span>GLOW & GRACE COLLECTION</span>
 
-        <div class="feature-copy reveal reveal-delay-1">
-            <span class="eyebrow">CRAFTSMANSHIP YOU CAN TRUST</span>
+                <h3>Find Your Everyday Skincare Essentials</h3>
 
-            <h2>From First Post to <span class="gold-text">Final Finish</span></h2>
+                <p>
+                    Discover skincare essentials designed to make
+                    your daily routine simple and enjoyable.
+                </p>
+            </div>
 
-            <p>
-                Every property is different. We take time to understand your
-                needs, assess the site and recommend a practical fencing
-                solution with a polished finish.
-            </p>
-
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-circle-check"></i><span><strong>Thoughtful planning:</strong> clear recommendations based on layout, function and style.</span></li>
-                <li><i class="fa-solid fa-circle-check"></i><span><strong>Careful installation:</strong> accurate alignment and attention to finishing details.</span></li>
-                <li><i class="fa-solid fa-circle-check"></i><span><strong>Practical repairs:</strong> targeted fixes for common fence and gate problems.</span></li>
-                <li><i class="fa-solid fa-circle-check"></i><span><strong>Respect for your property:</strong> a tidy, professional approach from start to finish.</span></li>
-            </ul>
-
-            <a href="contact.html" class="btn btn-primary">
-                Talk to Our Team <i class="fa-solid fa-arrow-right"></i>
+            <a href="products.html" class="next-cta-button">
+                Explore Our Products
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
+
         </div>
 
     </div>
+
 </section>
 
-<!-- ================= SECTION 4: OUR PROCESS ================= -->
-<section class="services-section" id="ourProcess">
-    <div class="container">
 
-        <div class="section-heading reveal">
-            <span class="eyebrow">A SIMPLE, CLEAR PROCESS</span>
-            <h2>How We Bring Your Project <span class="gold-text">to Life</span></h2>
-            <p>
-                Four straightforward steps keep your fencing project organised,
-                from the first conversation to the final walkthrough.
-            </p>
-        </div>
-
-        <div class="process-grid">
-            <article class="process-step reveal">
-                <div class="process-number">01</div>
-                <h3>Consultation</h3>
-                <p>Tell us about your property, priorities, preferred style and any repair concerns.</p>
-            </article>
-
-            <article class="process-step reveal reveal-delay-1">
-                <div class="process-number">02</div>
-                <h3>Site Assessment</h3>
-                <p>We review the area and discuss suitable materials, layout and project requirements.</p>
-            </article>
-
-            <article class="process-step reveal reveal-delay-2">
-                <div class="process-number">03</div>
-                <h3>Installation or Repair</h3>
-                <p>Our planned work focuses on fit, stability, function and a clean professional finish.</p>
-            </article>
-
-            <article class="process-step reveal reveal-delay-3">
-                <div class="process-number">04</div>
-                <h3>Final Walkthrough</h3>
-                <p>Review the completed work with our team and discuss care and maintenance tips.</p>
-            </article>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= SECTION 5: PROJECT GALLERY ================= -->
-<section class="services-section feature-section" id="projectGallery">
-    <div class="container">
-
-        <div class="section-heading reveal">
-            <span class="eyebrow">DESIGN INSPIRATION</span>
-            <h2>Make a Strong First <span class="gold-text">Impression</span></h2>
-            <p>
-                Explore the different looks and functions a thoughtfully
-                planned property boundary can bring to your home or business.
-            </p>
-        </div>
-
-        <div class="project-grid">
-
-            <article class="project-tile reveal">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbE20DNfV23bu_s6d-Pk-CpWPghN-RQFvsadssAAjKTQ&s=10"
-                     alt="Contemporary residential exterior" loading="lazy">
-                <div class="project-caption">
-                    <span>Residential</span>
-                    <h3>Modern Curb Appeal</h3>
-                </div>
-            </article>
-
-            <article class="project-tile reveal reveal-delay-1">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggLCQxYM1iP0Pl9Apv3HUnO1rcHe6GrwtWtuHDAFb4A&s=10"
-                     alt="Modern architectural exterior" loading="lazy">
-                <div class="project-caption">
-                    <span>Premium Design</span>
-                    <h3>Clean Architectural Lines</h3>
-                </div>
-            </article>
-
-            <article class="project-tile reveal reveal-delay-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFglZEVB-vKruYcKKqNikqLdCUVqMWvL6J1OXOWlHklQ&s=10"
-                     alt="Warm residential landscaping" loading="lazy">
-                <div class="project-caption">
-                    <span>Classic Style</span>
-                    <h3>Warm Natural Character</h3>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= SECTION 6: CONTACT CTA ================= -->
-<section class="services-cta" id="serviceQuote">
-    <div class="container cta-inner reveal">
-
-        <div>
-            <span class="eyebrow">LET'S GET STARTED</span>
-            <h2>Ready to Secure Your <span class="gold-text">Property?</span></h2>
-            <p>
-                Whether you're planning a new fence or need a dependable
-                repair, SecureFence is ready to help you explore the right
-                solution.
-            </p>
-        </div>
-
-        <a href="contact.html" class="btn btn-primary">
-            Request a Free Quote <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-    </div>
-</section>
-
+</main>
 <!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-    <div class="container">
 
-        <div class="footer-grid">
+<footer class="footer">
+
+    <div class="footer-bar">
+
+        <div class="footer-container">
 
             <div class="footer-brand">
-                <a href="index.html" class="brand-logo">
-                    <div class="logo-icon">
-                        <img src="Securelogo-removebg-preview.png"
-                             alt="SecureFence Logo">
-                    </div>
-                    <div class="logo-text">
-                        SECUREFENCE
-                        <span>REPAIR &amp; INSTALLATION</span>
-                    </div>
+
+                <div class="footer-brand-logo">
+                    <img src="Images/g&glogo1.png" alt="Glow & Grace Logo">
+                </div>
+
+                <div class="footer-brand-title">
+                    <h2>GLOW <span>& GRACE</span></h2>
+                    <p>SKINCARE • BEAUTY • WELLNESS</p>
+                </div>
+
+            </div>
+
+            <div class="brand-info">
+                <p>
+                    Thoughtful skincare, simple routines and everyday
+                    moments of self-care. Every kind of skin deserves care.
+                </p>
+            </div>
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
-                <p>
-                    Setting the standard for reliable perimeter security,
-                    architectural gates and quality fence installation.
-                    We help protect the places that matter most.
-                </p>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
-                <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Pinterest">
-                        <i class="fa-brands fa-pinterest-p"></i>
-                    </a>
-                </div>
-            </div>
+                <a href="#" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
 
-            <div>
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">› &nbsp; Home 1</a></li>
-                    <li><a href="home2.html">› &nbsp; Home 2</a></li>
-                    <li><a href="about.html">› &nbsp; About Our Craft</a></li>
-                    <li><a href="products.html">› &nbsp; Products</a></li>
-                    <li><a href="services.html">› &nbsp; Installation &amp; Repair</a></li>
-                    <li><a href="contact.html">› &nbsp; Contact Us</a></li>
-                </ul>
-            </div>
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
 
-            <div>
-                <h4 class="footer-heading">Our Services</h4>
-                <ul class="footer-links">
-                    <li><a href="#ourServices">› &nbsp; Residential Fencing</a></li>
-                    <li><a href="#ourServices">› &nbsp; Wood Privacy Fencing</a></li>
-                    <li><a href="#ourServices">› &nbsp; Metal Fencing</a></li>
-                    <li><a href="#ourServices">› &nbsp; Gate Installation</a></li>
-                    <li><a href="#installationRepair">› &nbsp; Fence Repair</a></li>
-                    <li><a href="#ourProcess">› &nbsp; Our Process</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-newsletter">
-                <h4 class="footer-heading">Stay Connected</h4>
-                <p>
-                    Subscribe for fencing ideas, property protection tips
-                    and design inspiration from SecureFence.
-                </p>
-
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" name="email"
-                           placeholder="Your email address"
-                           class="newsletter-input"
-                           aria-label="Your email address" required>
-                    <button type="submit" class="newsletter-btn"
-                            aria-label="Subscribe">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
             </div>
 
         </div>
 
-        <div class="footer-bottom">
-            <p>
-                &copy; <span id="currentYear"></span>
-                SecureFence. All Rights Reserved.
-            </p>
 
-            <div class="legal-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+            <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+            <a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+            <a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blogs</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Skincare</h3>
+
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Cleansers</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Serums</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Moisturizers</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Sunscreen</a>
+            <a href="services.html"><i class="fa-solid fa-chevron-right"></i> Skin Consultation</a>
+            <a href="booking.html"><i class="fa-solid fa-chevron-right"></i> Book Consultation</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Customer Support</h3>
+
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> FAQs</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Shipping Information</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Returns & Refunds</a>
+            <a href="privacy-policy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
+            <a href="terms-of-service.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Support</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+            <p><i class="fa-solid fa-envelope"></i> hello@glowandgrace.com</p>
+
+            <p><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</p>
+
+            <p><i class="fa-regular fa-clock"></i> Mon - Sat: 9 AM - 6 PM</p>
+
         </div>
 
     </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            Copyright © 2026 Glow & Grace. All Rights Reserved.
+        </p>
+
+        <div class="footer-legal-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+
+    </div>
+
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const htmlRoot = document.documentElement;
-    const body = document.body;
+<!-- JAVASCRIPT -->
 
-    /* ================= DYNAMIC YEAR ================= */
-    document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-
-    /* ================= DARK / LIGHT MODE ================= */
-    const themeToggle = document.getElementById("themeToggle");
-    const themeIcon = document.getElementById("themeIcon");
-
-    function updateThemeButton() {
-        const isDark = htmlRoot.getAttribute("data-theme") === "dark";
-
-        themeIcon.className = isDark
-            ? "fa-solid fa-sun"
-            : "fa-solid fa-moon";
-
-        themeToggle.title = isDark
-            ? "Switch to Light Mode"
-            : "Switch to Dark Mode";
-
-        themeToggle.setAttribute("aria-label", themeToggle.title);
-    }
-
-    themeToggle.addEventListener("click", function () {
-        const currentTheme = htmlRoot.getAttribute("data-theme");
-
-        htmlRoot.setAttribute(
-            "data-theme",
-            currentTheme === "dark" ? "light" : "dark"
-        );
-
-        updateThemeButton();
-    });
-
-    updateThemeButton();
-
-    /* ================= RTL / LTR ================= */
-    const rtlToggle = document.getElementById("rtlToggle");
-    const rtlText = document.getElementById("rtlText");
-
-    function updateDirectionButton() {
-        const isLTR = htmlRoot.getAttribute("dir") === "ltr";
-
-        rtlText.textContent = isLTR ? "RTL" : "LTR";
-
-        rtlToggle.title = isLTR
-            ? "Switch to Right-to-Left"
-            : "Switch to Left-to-Right";
-
-        rtlToggle.setAttribute("aria-label", rtlToggle.title);
-    }
-
-    rtlToggle.addEventListener("click", function () {
-        const currentDirection = htmlRoot.getAttribute("dir");
-
-        htmlRoot.setAttribute(
-            "dir",
-            currentDirection === "ltr" ? "rtl" : "ltr"
-        );
-
-        updateDirectionButton();
-    });
-
-    updateDirectionButton();
-
-    /* ================= STICKY HEADER ================= */
-    const siteHeader = document.getElementById("siteHeader");
-
-    function updateHeader() {
-        siteHeader.classList.toggle("scrolled", window.scrollY > 30);
-    }
-
-    window.addEventListener("scroll", updateHeader, { passive: true });
-    updateHeader();
-
-    /* ================= HOME DROPDOWNS ================= */
-    function closeDropdowns() {
-        document.querySelectorAll(".home-dropdown").forEach(function (dropdown) {
-            dropdown.classList.remove("open");
-
-            const button = dropdown.querySelector(".home-dropdown-btn");
-
-            if (button) {
-                button.setAttribute("aria-expanded", "false");
-            }
-        });
-    }
-
-    function setupDropdown(dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-
-        if (!dropdown) return;
-
-        const button = dropdown.querySelector(".home-dropdown-btn");
-
-        button.addEventListener("click", function (event) {
-            event.stopPropagation();
-
-            const shouldOpen = !dropdown.classList.contains("open");
-
-            closeDropdowns();
-
-            if (shouldOpen) {
-                dropdown.classList.add("open");
-                button.setAttribute("aria-expanded", "true");
-            }
-        });
-    }
-
-    setupDropdown("desktopHomeDropdown");
-    setupDropdown("mobileHomeDropdown");
-
-    document.addEventListener("click", function (event) {
-        if (!event.target.closest(".home-dropdown")) {
-            closeDropdowns();
-        }
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeDropdowns();
-            closeMobileMenu();
-        }
-    });
-
-    /* ================= MOBILE MENU ================= */
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mobileIcon = document.getElementById("mobileIcon");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    function closeMobileMenu() {
-        mobileMenu.classList.remove("show");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        mobileToggle.setAttribute("aria-label", "Open navigation");
-        mobileIcon.className = "fa-solid fa-bars";
-    }
-
-    mobileToggle.addEventListener("click", function () {
-        const isOpen = mobileMenu.classList.toggle("show");
-
-        mobileToggle.setAttribute("aria-expanded", String(isOpen));
-        mobileToggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation" : "Open navigation"
-        );
-
-        mobileIcon.className = isOpen
-            ? "fa-solid fa-xmark"
-            : "fa-solid fa-bars";
-    });
-
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            closeMobileMenu();
-            closeDropdowns();
-        });
-    });
-
-    /* ================= NEWSLETTER DEMO ================= */
-    const newsletterForm = document.getElementById("newsletterForm");
-
-    newsletterForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const email = newsletterForm.querySelector('input[type="email"]');
-
-        if (!email.checkValidity()) {
-            email.reportValidity();
-            return;
-        }
-
-        alert(
-            "Thank you for subscribing to SecureFence updates! " +
-            "This is a demonstration form; no email has been stored."
-        );
-
-        newsletterForm.reset();
-    });
-
-    /* ================= SCROLL REVEAL ================= */
-    const revealItems = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-        const revealObserver = new IntersectionObserver(
-            function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.08,
-                rootMargin: "0px 0px -25px 0px"
-            }
-        );
-
-        revealItems.forEach(function (item) {
-            revealObserver.observe(item);
-        });
-    } else {
-        revealItems.forEach(function (item) {
-            item.classList.add("is-visible");
-        });
-    }
-
-    /* Reveal elements if browser restores a scrolled page */
-    window.addEventListener("load", function () {
-        revealItems.forEach(function (item) {
-            const rect = item.getBoundingClientRect();
-
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                item.classList.add("is-visible");
-            }
-        });
-    });
-
-});
-</script>
 
 </body>
 </html>

@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow & Grace | Skin Quiz</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f7;
+    color: #263238;
+}
+
+.skin-quiz {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.quiz-box {
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+.quiz-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-heading span {
+    color: #d77b91;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.quiz-heading h1 {
+    font-size: 32px;
+    margin: 12px 0;
+    color: #263238;
+}
+
+.quiz-heading p {
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Progress */
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.progress-track {
+    height: 7px;
+    background: #f4e5e9;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 20%;
+    background: #d77b91;
+    transition: width 0.3s;
+}
+
+/* Questions */
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h3 {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #eadde1;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover {
+    background: #fff5f7;
+    border-color: #d77b91;
+}
+
+.option:has(input:checked) {
+    background: #fff0f4;
+    border-color: #d77b91;
+}
+
+.option input {
+    accent-color: #d77b91;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+/* Buttons */
+
+.quiz-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.quiz-buttons button,
+.result-box button {
+    padding: 14px 24px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.next-btn,
+.result-box button {
+    background: #d77b91;
+    color: white;
+}
+
+.prev-btn {
+    background: #f3e9ec;
+    color: #333;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Result */
+
+.result-box {
+    display: none;
+    text-align: center;
+    padding: 25px 5px;
+}
+
+.result-box .flower {
+    font-size: 55px;
+    color: #d77b91;
+}
+
+.result-box h2 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.result-box p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.quiz-note {
+    text-align: center;
+    margin-top: 30px;
+    color: #999;
+    font-size: 12px;
+}
+
+@media(max-width: 550px) {
+    .quiz-box {
+        padding: 25px 18px;
+    }
+
+    .quiz-heading h1 {
+        font-size: 26px;
+    }
+
+    .question h3 {
+        font-size: 18px;
+    }
+
+    .option {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .quiz-buttons button {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="skin-quiz">
+
+<div class="quiz-box">
+
+    <div class="quiz-heading">
+        <span>GLOW & GRACE</span>
+        <h1>Discover Your Skin Type</h1>
+        <p>Answer these simple questions to discover your skin type and understand your skincare needs.</p>
+    </div>
+
+    <div id="quizArea">
+
+      <!--  <div class="progress-info">
+            <span id="questionCount">Question 1 of 5</span>
+            <span id="percentage">20%</span>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progress"></div>
+        </div>-->
+
+        <div id="questionsContainer">
+
+            <div class="question active">
+                <h3>1. How does your skin feel after washing your face?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="dry">
+                    Tight and dry
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="oily">
+                    Oily and shiny
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="combination">
+                    Oily in some areas, dry in others
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q1" value="normal">
+                    Comfortable and balanced
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. How does your skin look during the day?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="dry">
+                    Dry or flaky
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="oily">
+                    Shiny all over my face
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="combination">
+                    Shiny around forehead and nose
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q2" value="normal">
+                    Fresh and balanced
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>3. How would you describe your pores?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="dry">
+                    Small and barely visible
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="oily">
+                    Large and clearly visible
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="combination">
+                    Visible mainly around my nose
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q3" value="normal">
+                    Small and not very noticeable
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>4. How often does your skin feel dry?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="dry">
+                    Very often
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="oily">
+                    Almost never
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="combination">
+                    Only on certain areas
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q4" value="normal">
+                    Occasionally
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>5. What does your skin need most?</h3>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="dry">
+                    Extra hydration
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="oily">
+                    Oil balance
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="combination">
+                    Different care for different areas
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="q5" value="normal">
+                    Basic daily skincare
+                </label>
+            </div>
+
+        </div>
+
+        <div class="quiz-buttons">
+
+            <button type="button" class="prev-btn" id="prevBtn">
+                Previous
+            </button>
+
+            <button type="button" class="next-btn" id="nextBtn">
+                Next Question
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Result -->
+
+    <div class="result-box" id="resultBox">
+
+        <div class="flower">✿</div>
+
+        <span>YOUR SKIN TYPE</span>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultDescription"></p>
+
+        <button type="button" id="restartBtn">
+            Retake Quiz
+        </button>
+
+    </div>
+
+    <p class="quiz-note">
+        This quiz provides general skincare guidance and is not a medical diagnosis.
+    </p>
+
+</div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const questions = document.querySelectorAll(".question");
+
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    const progress = document.getElementById("progress");
+    const questionCount = document.getElementById("questionCount");
+    const percentage = document.getElementById("percentage");
+
+    const quizArea = document.getElementById("quizArea");
+    const resultBox = document.getElementById("resultBox");
+
+    const resultTitle = document.getElementById("resultTitle");
+    const resultDescription = document.getElementById("resultDescription");
+
+    let currentIndex = 0;
+
+    const totalQuestions = questions.length;
+
+    function displayQuestion() {
+
+        questions.forEach(function(question, index) {
+
+            question.classList.toggle(
+                "active",
+                index === currentIndex
+            );
+
+        });
+
+        let percent = Math.round(
+            ((currentIndex + 1) / totalQuestions) * 100
+        );
+
+        progress.style.width = percent + "%";
+
+        questionCount.textContent =
+            "Question " + (currentIndex + 1) +
+            " of " + totalQuestions;
+
+        percentage.textContent = percent + "%";
+
+        prevBtn.disabled = currentIndex === 0;
+
+        nextBtn.textContent =
+            currentIndex === totalQuestions - 1
+            ? "View My Result"
+            : "Next Question";
+
+    }
+
+    function calculateResult() {
+
+        let scores = {
+            dry: 0,
+            oily: 0,
+            combination: 0,
+            normal: 0
+        };
+
+        for (let i = 1; i <= totalQuestions; i++) {
+
+            let selected = document.querySelector(
+                'input[name="q' + i + '"]:checked'
+            );
+
+            if (!selected) {
+                alert("Please answer all questions.");
+                return;
+            }
+
+            scores[selected.value]++;
+
+        }
+
+        let maxScore = Math.max(...Object.values(scores));
+
+        let winners = Object.keys(scores).filter(function(type) {
+            return scores[type] === maxScore;
+        });
+
+        let lastAnswer = document.querySelector(
+            'input[name="q5"]:checked'
+        ).value;
+
+        let finalType = winners.includes(lastAnswer)
+            ? lastAnswer
+            : winners[0];
+
+        const results = {
+
+            dry: {
+                title: "Dry Skin",
+                description: "Your skin may need extra hydration. Choose a gentle cleanser, nourishing moisturizer and daily sunscreen to support your skin barrier."
+            },
+
+            oily: {
+                title: "Oily Skin",
+                description: "Your skin may produce excess oil. Try a gentle cleanser, lightweight moisturizer and non-comedogenic sunscreen."
+            },
+
+            combination: {
+                title: "Combination Skin",
+                description: "Your skin may have both oily and dry areas. Choose balanced skincare products and adjust your routine according to different areas."
+            },
+
+            normal: {
+                title: "Normal Skin",
+                description: "Your skin appears generally balanced. Maintain a simple routine with gentle cleansing, moisturizing and daily sunscreen."
+            }
+
+        };
+
+        resultTitle.textContent = results[finalType].title;
+
+        resultDescription.textContent =
+            results[finalType].description;
+
+        quizArea.style.display = "none";
+
+        resultBox.style.display = "block";
+
+    }
+
+    nextBtn.addEventListener("click", function() {
+
+        let selected = document.querySelector(
+            'input[name="q' + (currentIndex + 1) + '"]:checked'
+        );
+
+        if (!selected) {
+            alert("Please select an answer before continuing.");
+            return;
+        }
+
+        if (currentIndex < totalQuestions - 1) {
+
+            currentIndex++;
+
+            displayQuestion();
+
+        } else {
+
+            calculateResult();
+
+        }
+
+    });
+
+    prevBtn.addEventListener("click", function() {
+
+        if (currentIndex > 0) {
+
+            currentIndex--;
+
+            displayQuestion();
+
+        }
+
+    });
+
+    document.getElementById("restartBtn").addEventListener("click", function() {
+
+        document.querySelectorAll(
+            '#questionsContainer input[type="radio"]'
+        ).forEach(function(input) {
+
+            input.checked = false;
+
+        });
+
+        currentIndex = 0;
+
+        resultBox.style.display = "none";
+
+        quizArea.style.display = "block";
+
+        displayQuestion();
+
+    });
+
+    displayQuestion();
+
+});
+
+</script>
+
+</body>
+</html>
