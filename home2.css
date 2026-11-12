@@ -10,6 +10,7 @@
 
 .luxury-hero {
     align-items: center;
+    
 }
 
 .luxury-hero-content {
@@ -87,7 +88,7 @@
 .luxury-hero {
     position: relative;
     width: 100%;
-    min-height: 760px;
+    min-height: 95vh;
     height: calc(100vh - 100px);
     max-height: 900px;
 
@@ -1581,10 +1582,7 @@
 
 /* Featured Card */
 
-.featured-testimonial {
-    background: var(--soft-bg);
-    border-color: var(--primary-color);
-}
+
 
 /* Top Row */
 

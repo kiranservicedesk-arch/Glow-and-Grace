@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "index.html": "home",
             "home2.html": "home",
             "about.html": "about",
-            "services.html": "services",
+            "skincare.html": "skincare",
             "products.html": "products",
             "blog.html": "blog",
             "contact.html": "contact"

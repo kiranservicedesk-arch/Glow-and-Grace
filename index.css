@@ -6,8 +6,8 @@
 
 .home1-hero {
     width: 100%;
-    min-height: 650px;
-    padding: 75px 5%;
+    min-height: 85vh;
+    padding: 40px 5%;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    gap: 55px;
+    gap: 35px;
 }
 
 /* HERO CONTENT */
@@ -44,7 +44,7 @@
     border-radius: 30px;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1.2px;
+    /*letter-spacing: 1.2px;*/
 }
 
 .hero-content h1 {
@@ -1603,7 +1603,7 @@
    NEWSLETTER BOX
 ========================================= */
 
-.newsletter-box {
+/*.newsletter-box {
     max-width: 850px;
     margin: 0 auto 55px;
     padding: 55px 35px;
@@ -1613,7 +1613,7 @@
     border-radius: 16px;
 }
 
-/* NEWSLETTER ICON */
+/* NEWSLETTER ICON 
 
 .newsletter-icon {
     width: 65px;
@@ -1628,7 +1628,7 @@
     font-size: 25px;
 }
 
-/* HEADING */
+/* HEADING *
 
 .newsletter-subtitle {
     display: block;
@@ -1656,7 +1656,7 @@
     line-height: 1.8;
 }
 
-/* NEWSLETTER FORM */
+/* NEWSLETTER FORM *
 
 .newsletter-form {
     max-width: 570px;
@@ -1719,7 +1719,7 @@
     transform: translateY(-2px);
 }
 
-/* PRIVACY NOTE */
+/* PRIVACY NOTE *
 
 .newsletter-box .newsletter-note {
     margin-top: 17px;
@@ -1732,7 +1732,7 @@
     margin-right: 5px;
 }
 
-/* FORM MESSAGE */
+/* FORM MESSAGE *
 
 .newsletter-message {
     min-height: 20px;
@@ -1747,6 +1747,165 @@
 
 .newsletter-message.error {
     color: #d14343;
+}
+*/
+
+/* PERSONALIZED ROUTINE SECTION */
+
+.routine-section {
+    padding: 100px 7%;
+    background: var(--bg-color);
+}
+
+.routine-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.routine-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.routine-tag {
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.routine-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 46px);
+    color: var(--text-color);
+    line-height: 1.3;
+    margin: 18px 0;
+}
+
+.routine-heading h2 span {
+    display: block;
+    color: var(--primary-color);
+}
+
+.routine-heading p {
+    color: var(--paragraph-color);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.routine-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.routine-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+.routine-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.routine-image {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.routine-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.routine-card:hover .routine-image img {
+    transform: scale(1.07);
+}
+
+.routine-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.routine-info {
+    padding: 24px 20px;
+}
+
+.routine-info h3 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin: 0 0 12px;
+}
+
+.routine-info p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.routine-action {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.routine-action a {
+    display: inline-block;
+    padding: 15px 32px;
+    background: var(--secondary-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.routine-action a:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+    .routine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .routine-section {
+        padding: 65px 5%;
+    }
+
+    .routine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .routine-image {
+        height: 280px;
+    }
 }
 
 /* =========================================

@@ -1,0 +1,3541 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glow & Grace | Skincare & Beauty</title>
+
+    <link rel="icon" type="image/png" href="Images/g&glogo1.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylessheet" href="product-details.css">
+    <script src="main.js"></script>
+    <script src="product-details.js"></script>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+
+/* =====================================
+   PRODUCT DETAILS HERO
+===================================== */
+
+.pd-hero {
+    width: 100%;
+    min-height: 620px;
+    padding: 70px 5%;
+    background: var(--bg-color);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.pd-hero-container {
+    max-width: 1250px;
+    min-height: 480px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+/* LEFT CONTENT */
+
+.pd-hero-content {
+    min-width: 0;
+}
+
+.pd-hero-tag {
+    color: var(--secondary-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.pd-hero-content h1 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.pd-hero-content h1 span {
+    display: block;
+    color: var(--primary-color);
+}
+
+.pd-hero-content > p {
+    color: var(--paragraph-color);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 520px;
+    margin-bottom: 25px;
+}
+
+/* HIGHLIGHTS */
+
+.pd-hero-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 32px;
+}
+
+.pd-hero-highlights span {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.pd-hero-highlights i {
+    color: var(--secondary-color);
+}
+
+/* BUTTONS */
+
+.pd-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.pd-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+
+    background: var(--secondary-color);
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.pd-hero-btn:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-3px);
+}
+
+.pd-hero-link {
+    color: var(--text-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.pd-hero-link:hover {
+    color: var(--secondary-color);
+}
+
+/* RIGHT VISUAL */
+
+.pd-hero-visual {
+    position: relative;
+    min-width: 0;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pd-hero-image-bg {
+    position: absolute;
+    width: 85%;
+    height: 90%;
+    background: var(--soft-bg);
+    border-radius: 48% 48% 12px 12px;
+}
+
+.pd-hero-visual img {
+    position: relative;
+    z-index: 1;
+    width: 82%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 48% 48% 12px 12px;
+}
+
+/* IMAGE NOTE */
+
+.pd-hero-note {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 35px;
+
+    padding: 17px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.pd-hero-note span {
+    display: block;
+    color: var(--paragraph-color);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.pd-hero-note strong {
+    display: block;
+    color: var(--secondary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .pd-hero {
+        padding: 55px 4%;
+    }
+
+    .pd-hero-container {
+        gap: 25px;
+    }
+
+    .pd-hero-visual {
+        height: 420px;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .pd-hero {
+        padding: 45px 18px;
+    }
+
+    .pd-hero-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .pd-hero-content h1 {
+        font-size: 39px;
+    }
+
+    .pd-hero-content > p {
+        font-size: 14px;
+    }
+
+    .pd-hero-visual {
+        height: 350px;
+    }
+
+    .pd-hero-visual img {
+        width: 85%;
+    }
+
+    .pd-hero-note {
+        right: 0;
+        bottom: 15px;
+    }
+
+    .pd-hero-actions {
+        gap: 17px;
+    }
+
+}
+
+
+/* =========================================
+   DYNAMIC PRODUCT DETAILS PAGE
+   GLOW & GRACE
+========================================= */
+
+.pdx-page {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.pdx-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.pdx-overview,
+.pdx-description-section,
+.pdx-benefits-section,
+.pdx-usage-section,
+.pdx-details-section,
+.pdx-faq-section {
+    width: 100%;
+    padding: 85px 5%;
+    box-sizing: border-box;
+}
+
+.pdx-eyebrow {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+/* PRODUCT OVERVIEW */
+
+.pdx-product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.pdx-gallery {
+    min-width: 0;
+}
+
+.pdx-main-image {
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--soft-bg);
+}
+
+.pdx-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pdx-image-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    padding: 10px 15px;
+    background: var(--surface);
+    color: var(--secondary-color);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.pdx-info {
+    min-width: 0;
+}
+
+.pdx-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: var(--paragraph-color);
+}
+
+.pdx-breadcrumb a {
+    color: var(--paragraph-color);
+    text-decoration: none;
+}
+
+.pdx-breadcrumb span {
+    color: var(--secondary-color);
+}
+
+.pdx-category {
+    color: var(--secondary-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.pdx-info h1 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 50px);
+    line-height: 1.2;
+    margin: 17px 0;
+}
+
+.pdx-description {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.pdx-price-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.pdx-price-row strong {
+    color: var(--text-color);
+    font-size: 28px;
+}
+
+.pdx-price-row span {
+    color: var(--paragraph-color);
+    font-size: 12px;
+}
+
+.pdx-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 25px 0;
+}
+
+.pdx-subheading {
+    display: block;
+    color: var(--text-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 15px;
+}
+
+.pdx-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.pdx-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--paragraph-color);
+    font-size: 13px;
+}
+
+.pdx-highlights li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+
+.pdx-size-value {
+    display: inline-block;
+    padding: 11px 17px;
+    border: 1px solid var(--border-color);
+    background: var(--surface);
+    color: var(--text-color);
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.pdx-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.pdx-primary-btn,
+.pdx-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 19px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.pdx-primary-btn {
+    color: #fff;
+    background: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.pdx-primary-btn:hover {
+    background: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+
+.pdx-secondary-btn {
+    color: var(--secondary-color);
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+}
+
+.pdx-secondary-btn:hover {
+    color: #fff;
+    background: var(--secondary-color);
+}
+
+.pdx-help-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin-top: 25px;
+    background: var(--soft-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--paragraph-color);
+    font-size: 12px;
+}
+
+.pdx-help-note i {
+    color: var(--secondary-color);
+}
+
+/* DESCRIPTION */
+
+.pdx-description-section {
+    background: var(--soft-bg);
+}
+
+.pdx-description-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.pdx-description-layout h2,
+.pdx-details-intro h2 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.pdx-description-layout h2 span,
+.pdx-details-intro h2 span {
+    color: var(--primary-color);
+}
+
+.pdx-description-layout > div:last-child p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 0 15px;
+}
+
+/* SECTION HEADING */
+
+.pdx-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+.pdx-heading h2 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 42px);
+    margin: 5px 0 13px;
+}
+
+.pdx-heading h2 span {
+    color: var(--primary-color);
+}
+
+.pdx-heading > p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* BENEFITS */
+
+.pdx-benefits-section,
+.pdx-faq-section {
+    background: var(--soft-bg);
+}
+
+.pdx-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.pdx-benefit-card {
+    padding: 32px 25px;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+.pdx-benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.pdx-benefit-card > i {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--soft-bg);
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.pdx-benefit-card h3 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.pdx-benefit-card p {
+    color: var(--paragraph-color);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* USAGE */
+
+.pdx-usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.pdx-usage-card {
+    position: relative;
+    padding: 35px 25px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+}
+
+.pdx-usage-card > span {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+}
+
+.pdx-usage-card > i {
+    color: var(--secondary-color);
+    font-size: 27px;
+    margin: 15px 0 22px;
+}
+
+.pdx-usage-card h3 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.pdx-usage-card p {
+    color: var(--paragraph-color);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.pdx-disclaimer {
+    color: var(--paragraph-color);
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 30px auto 0;
+}
+
+/* DETAILS TABLE */
+
+.pdx-details-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.pdx-details-intro > p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pdx-details-table {
+    padding: 25px 30px;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+}
+
+.pdx-details-table > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+}
+
+.pdx-details-table > div:last-child {
+    border-bottom: none;
+}
+
+.pdx-details-table span {
+    color: var(--paragraph-color);
+}
+
+.pdx-details-table strong {
+    color: var(--text-color);
+    text-align: right;
+}
+
+/* FAQ */
+
+.pdx-faq-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.pdx-faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    margin-bottom: 13px;
+    overflow: hidden;
+}
+
+.pdx-faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 21px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pdx-faq-question i {
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.pdx-faq-item.active .pdx-faq-question i {
+    transform: rotate(45deg);
+}
+
+.pdx-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.pdx-faq-answer p {
+    min-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 21px;
+    color: var(--paragraph-color);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.pdx-faq-item.active .pdx-faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.pdx-faq-item.active .pdx-faq-answer p {
+    padding-bottom: 21px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .pdx-product-layout,
+    .pdx-description-layout,
+    .pdx-details-layout {
+        gap: 35px;
+    }
+
+    .pdx-main-image {
+        height: 450px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .pdx-overview,
+    .pdx-description-section,
+    .pdx-benefits-section,
+    .pdx-usage-section,
+    .pdx-details-section,
+    .pdx-faq-section {
+        padding: 60px 18px;
+    }
+
+    .pdx-product-layout,
+    .pdx-description-layout,
+    .pdx-details-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pdx-main-image {
+        height: 360px;
+    }
+
+    .pdx-info h1 {
+        font-size: 38px;
+    }
+
+    .pdx-actions {
+        flex-direction: column;
+    }
+
+    .pdx-primary-btn,
+    .pdx-secondary-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pdx-benefits-grid,
+    .pdx-usage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdx-details-table {
+        padding: 18px;
+    }
+
+    .pdx-details-table > div {
+        font-size: 12px;
+    }
+
+    .pdx-faq-question {
+        padding: 18px;
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .pdx-details-table > div {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .pdx-details-table strong {
+        text-align: left;
+    }
+
+}
+
+/* =====================================
+   DAILY HYDRATION CTA SECTION
+===================================== */
+
+.pdx-cta {
+    padding: 85px 20px;
+    background: var(--soft-bg);
+    overflow: hidden;
+}
+
+.pdx-cta-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 65px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+}
+
+.pdx-cta-content {
+    max-width: 680px;
+    position: relative;
+    z-index: 2;
+}
+
+.pdx-cta-label {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.pdx-cta-content h2 {
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.pdx-cta-content h2 span {
+    color: var(--primary-color);
+    display: block;
+}
+
+.pdx-cta-content p {
+    color: var(--paragraph-color);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 580px;
+    margin-bottom: 28px;
+}
+
+.pdx-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.pdx-cta-primary,
+.pdx-cta-secondary {
+    min-height: 48px;
+    padding: 14px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.pdx-cta-primary {
+    background: var(--secondary-color);
+    color: #ffffff;
+    border: 1px solid var(--secondary-color);
+}
+
+.pdx-cta-primary:hover {
+    background: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    transform: translateY(-3px);
+}
+
+.pdx-cta-secondary {
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.pdx-cta-secondary:hover {
+    color: var(--primary-dark);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+
+/* DECORATIVE ELEMENT */
+
+.pdx-cta-decoration {
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdx-cta-circle {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: var(--soft-bg);
+    border: 1px solid var(--border-color);
+}
+
+.pdx-cta-small-circle {
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    opacity: 0.18;
+}
+
+.pdx-cta-decoration i {
+    position: relative;
+    z-index: 2;
+    font-size: 75px;
+    color: var(--secondary-color);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .pdx-cta {
+        padding: 55px 16px;
+    }
+
+    .pdx-cta-container {
+        padding: 45px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .pdx-cta-decoration {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+    }
+
+    .pdx-cta-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .pdx-cta-small-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .pdx-cta-decoration i {
+        font-size: 48px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .pdx-cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pdx-cta-primary,
+    .pdx-cta-secondary {
+        width: 100%;
+    }
+
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <nav class="nav-bar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <img src="Images/g&glogo1.png" alt="Glow & Grace Logo">
+            </div>
+
+            <div class="brand-title">
+                <h1>GLOW <span>& GRACE</span></h1>
+                <p>SKINCARE • BEAUTY • WELLNESS</p>
+            </div>
+
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li class="dropdown">
+
+                <a href="index.html" class="home-btn" id="homeDropdownBtn" data-page="home">
+                    Home
+                    <span class="caret">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                </a>
+
+                <ul class="dropdown-menu" id="homeDropdown">
+                    <li><a href="index.html">Home Classic</a></li>
+                    <li><a href="home2.html">Home Standard</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="about.html" class="nav-link" data-page="about">About Us</a></li>
+            <li><a href="skincare.html" class="nav-link" data-page="skincare">Skincare</a></li>
+            <li><a href="products.html" class="nav-link" data-page="products">Products</a></li>
+            <li><a href="blog.html" class="nav-link" data-page="blog">Blogs</a></li>
+            <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+
+        </ul>
+
+        <div class="toggles">
+
+            <button class="utility-toggle" id="rtl-toggle"
+                aria-label="Toggle RTL">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </button>
+
+            <button class="utility-toggle" id="theme-toggle"
+                aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="order.html" class="primary-btn">
+                Order Now
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+<main>
+
+
+<!-- =====================================
+     PRODUCT DETAILS HERO SECTION
+===================================== -->
+
+<section class="pd-hero">
+
+    <div class="pd-hero-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="pd-hero-content">
+
+            <span class="pd-hero-tag">
+                GLOW & GRACE | SKINCARE COLLECTION
+            </span>
+
+            <h1>
+                Give Your Skin
+                <span>The Care It Deserves.</span>
+            </h1>
+
+            <p>
+                Discover a skincare essential designed to bring
+                hydration, comfort and a refreshing touch to
+                your everyday beauty routine.
+            </p>
+
+            <div class="pd-hero-highlights">
+                <span><i class="fas fa-check-circle"></i> Everyday Skincare</span>
+                <span><i class="fas fa-check-circle"></i> Lightweight Formula</span>
+                <span><i class="fas fa-check-circle"></i> Hydration Focused</span>
+            </div>
+
+            <div class="pd-hero-actions">
+                <a href="#product-details" class="pd-hero-btn">
+                    EXPLORE PRODUCT
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="products.html" class="pd-hero-link">
+                    VIEW ALL PRODUCTS
+                </a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="pd-hero-visual">
+
+            <div class="pd-hero-image-bg"></div>
+
+            <img src="Images/pd1.jpg"
+                 alt="Glow and Grace skincare serum">
+
+            <div class="pd-hero-note">
+                <span>YOUR DAILY</span>
+                <strong>Glow Ritual</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DYNAMIC PRODUCT DETAILS CONTENT
+     GLOW & GRACE
+========================================= -->
+
+<main class="pdx-page">
+
+    <!-- PRODUCT OVERVIEW -->
+
+    <section class="pdx-overview" id="product-details">
+
+        <div class="pdx-container">
+
+            <div class="pdx-product-layout">
+
+                <!-- PRODUCT IMAGE -->
+
+                <div class="pdx-gallery">
+                    <div class="pdx-main-image">
+                        <span class="pdx-image-tag">GLOW & GRACE</span>
+
+                        <img id="pdx-image"
+                             src="Images/pp1.jpg"
+                             alt="Skincare product">
+                    </div>
+                </div>
+
+                <!-- PRODUCT INFORMATION -->
+
+                <div class="pdx-info">
+
+                    <div class="pdx-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="products.html">Products</a>
+                        <i class="fas fa-angle-right"></i>
+                        <span id="pdx-breadcrumb-name">Product Details</span>
+                    </div>
+
+                    <span class="pdx-category" id="pdx-category">
+                        DAILY SKINCARE
+                    </span>
+
+                    <h1 id="pdx-name">Face Cleanser</h1>
+
+                    <p class="pdx-description" id="pdx-description">
+                        Discover an everyday skincare essential
+                        for your personal care routine.
+                    </p>
+
+                    <div class="pdx-price-row">
+                        <strong id="pdx-price">₹299</strong>
+                        <span>Starting price</span>
+                    </div>
+
+                    <div class="pdx-divider"></div>
+
+                    <h3 class="pdx-subheading">PRODUCT HIGHLIGHTS</h3>
+
+                    <ul class="pdx-highlights" id="pdx-highlights">
+                        <li>Designed for everyday skincare</li>
+                        <li>Easy to include in your routine</li>
+                        <li>Follow the product label for usage</li>
+                    </ul>
+
+                    <div class="pdx-size-area">
+                        <span class="pdx-subheading">PRODUCT CATEGORY</span>
+                        <div class="pdx-size-value" id="pdx-size">
+                            Face Cleanser
+                        </div>
+                    </div>
+
+                    <div class="pdx-actions">
+                        <a href="contact.html" class="pdx-primary-btn">
+                            ENQUIRE ABOUT PRODUCT
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <a href="products.html" class="pdx-secondary-btn">
+                            BACK TO PRODUCTS
+                        </a>
+                    </div>
+
+                    <div class="pdx-help-note">
+                        <i class="fas fa-headset"></i>
+                        <span>Need help choosing? Contact our skincare team.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- =====================================
+     FACE SERUM PRODUCT OVERVIEW
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-overview" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">
+                        GLOW & GRACE
+                    </span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp2.jpg"
+                        alt="Vitamin C Brightening Face Serum"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">
+                        Face Serums
+                    </span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    TARGETED SKINCARE
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Vitamin C Brightening Face Serum
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    A lightweight Vitamin C face serum designed
+                    to improve the appearance of dull skin and
+                    support a fresh, radiant-looking complexion.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">
+                        ₹499
+                    </strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        Helps improve the appearance of dull skin
+                    </li>
+
+                    <li>
+                        Supports a radiant-looking complexion
+                    </li>
+
+                    <li>
+                        Lightweight and fast-absorbing texture
+                    </li>
+
+                    <li>
+                        Easy to include in your daily skincare routine
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Face Serums
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+
+                        ENQUIRE ABOUT PRODUCT
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MOISTURIZER PRODUCT OVERVIEW
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-overview" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">
+                        GLOW & GRACE
+                    </span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp3.jpg"
+                        alt="Hydrating Daily Face Moisturizer"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">
+                        Moisturizers
+                    </span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DAILY HYDRATION
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Hydrating Daily Face Moisturizer
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    A lightweight daily moisturizer designed to
+                    provide lasting hydration and leave your skin
+                    feeling soft, smooth and comfortable.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">
+                        ₹349
+                    </strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        Helps maintain skin hydration
+                    </li>
+
+                    <li>
+                        Leaves skin feeling soft and smooth
+                    </li>
+
+                    <li>
+                        Lightweight and comfortable texture
+                    </li>
+
+                    <li>
+                        Suitable for everyday skincare routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Moisturizers
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+
+                        ENQUIRE ABOUT PRODUCT
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SUNSCREEN PRODUCT OVERVIEW
+     IMAGE RIGHT SIDE
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-overview pdx-image-right" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- PRODUCT INFORMATION - LEFT SIDE -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">
+                        Sunscreens
+                    </span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DAILY PROTECTION
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Daily Shield SPF 50 Sunscreen
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    A lightweight daily sunscreen designed to
+                    provide broad-spectrum sun protection while
+                    keeping your skin feeling comfortable and
+                    moisturized.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">
+                        ₹399
+                    </strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        Broad-spectrum SPF 50 sun protection
+                    </li>
+
+                    <li>
+                        Lightweight and comfortable texture
+                    </li>
+
+                    <li>
+                        Helps protect skin from UVA and UVB rays
+                    </li>
+
+                    <li>
+                        Suitable for everyday sun care routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Sunscreens
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+
+                        ENQUIRE ABOUT PRODUCT
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT IMAGE - RIGHT SIDE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">
+                        GLOW & GRACE
+                    </span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp4.jpg"
+                        alt="Daily Shield SPF 50 Sunscreen"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     FACE MASK PRODUCT OVERVIEW
+     IMAGE LEFT SIDE
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-overview" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- PRODUCT IMAGE - LEFT SIDE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">
+                        GLOW & GRACE
+                    </span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp5.jpg"
+                        alt="Refreshing Glow Face Mask"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION - RIGHT SIDE -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">
+                        Face Masks
+                    </span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    WEEKLY SKINCARE
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Refreshing Glow Face Mask
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    A refreshing face mask designed to give your
+                    skincare routine a nourishing touch while
+                    leaving your skin feeling soft, fresh and
+                    comfortable.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">
+                        ₹199
+                    </strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        Refreshes and comforts the skin
+                    </li>
+
+                    <li>
+                        Helps maintain skin hydration
+                    </li>
+
+                    <li>
+                        Leaves skin feeling soft and smooth
+                    </li>
+
+                    <li>
+                        A relaxing addition to your weekly skincare routine
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Face Masks
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+
+                        ENQUIRE ABOUT PRODUCT
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     EYE CARE PRODUCT OVERVIEW
+     IMAGE RIGHT SIDE
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-overview pdx-image-right" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- PRODUCT INFORMATION - LEFT SIDE -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">
+                        Eye Care
+                    </span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DELICATE CARE
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Hydrating Under Eye Cream
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    A lightweight under eye cream designed to
+                    moisturize the delicate skin around the eyes
+                    and leave it feeling soft, smooth and refreshed.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">
+                        ₹449
+                    </strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        Helps moisturize the delicate eye area
+                    </li>
+
+                    <li>
+                        Lightweight and comfortable texture
+                    </li>
+
+                    <li>
+                        Leaves the under eye area feeling soft
+                    </li>
+
+                    <li>
+                        Easy to include in your daily skincare routine
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Eye Care
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+
+                        ENQUIRE ABOUT PRODUCT
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT IMAGE - RIGHT SIDE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">
+                        GLOW & GRACE
+                    </span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp6.jpg"
+                        alt="Hydrating Under Eye Cream"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     VITAMIN C BRIGHTENING FACE SERUM
+     PRODUCT OVERVIEW
+===================================== -->
+
+<section class="pdx-overview" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- LEFT SIDE IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">GLOW & GRACE</span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp2.jpg"
+                        alt="Vitamin C Brightening Face Serum"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE CONTENT -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">Face Serum</span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    TARGETED SKINCARE
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Vitamin C Brightening Face Serum
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    Give your skin a fresh, radiant-looking glow with our
+                    Vitamin C Brightening Face Serum. Its lightweight
+                    formula is designed to support a brighter-looking
+                    complexion while keeping your skin feeling smooth,
+                    refreshed and hydrated.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">₹499</strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Helps improve the appearance of dull skin
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Supports a radiant-looking complexion
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Lightweight and fast-absorbing texture
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Suitable for everyday skincare routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Face Serums
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+                        ENQUIRE ABOUT PRODUCT
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     HYALURONIC HYDRATION SERUM
+     PRODUCT OVERVIEW
+===================================== -->
+
+<section class="pdx-overview pdx-image-right" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- RIGHT SIDE IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">GLOW & GRACE</span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp7.jpg"
+                        alt="Hyaluronic Hydration Serum"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- LEFT SIDE CONTENT -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">Hydration Serum</span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DEEP HYDRATION
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Hyaluronic Hydration Serum
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    Give your skin a refreshing boost of hydration with
+                    our Hyaluronic Hydration Serum. Its lightweight
+                    formula is designed to help maintain skin moisture,
+                    leaving your skin feeling soft, smooth, refreshed
+                    and comfortably hydrated throughout the day.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">₹549</strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Helps maintain skin hydration
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Supports soft and smooth-looking skin
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Lightweight and non-greasy texture
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Ideal for daily hydration routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Hydration Serums
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+                        ENQUIRE ABOUT PRODUCT
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     GENTLE DAILY FACE CLEANSER
+     PRODUCT OVERVIEW
+===================================== -->
+
+<section class="pdx-overview" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- LEFT SIDE IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">GLOW & GRACE</span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp1.jpg"
+                        alt="Gentle Daily Face Cleanser"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE CONTENT -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">Face Cleanser</span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DAILY SKINCARE
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Gentle Daily Face Cleanser
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    Start your skincare routine with our Gentle Daily
+                    Face Cleanser. Its gentle cleansing formula helps
+                    remove everyday dirt, excess oil and impurities
+                    while leaving your skin feeling fresh, clean and
+                    comfortable without a heavy or dry feeling.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">₹299</strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Gently removes everyday dirt and impurities
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Helps cleanse excess oil from the skin
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Leaves skin feeling fresh and comfortable
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Suitable for everyday cleansing routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Face Cleansers
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+                        ENQUIRE ABOUT PRODUCT
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     DAILY HYDRATION
+     PRODUCT OVERVIEW
+===================================== -->
+
+<section class="pdx-overview pdx-image-right" id="product-details">
+
+    <div class="pdx-container">
+
+        <div class="pdx-product-layout">
+
+            <!-- RIGHT SIDE IMAGE -->
+
+            <div class="pdx-gallery">
+
+                <div class="pdx-main-image">
+
+                    <span class="pdx-image-tag">GLOW & GRACE</span>
+
+                    <img
+                        id="pdx-image"
+                        src="Images/pp3.jpg"
+                        alt="Hydrating Daily Face Moisturizer"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- LEFT SIDE CONTENT -->
+
+            <div class="pdx-info">
+
+                <div class="pdx-breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <a href="products.html">Products</a>
+
+                    <i class="fas fa-angle-right"></i>
+
+                    <span id="pdx-breadcrumb-name">Daily Hydration</span>
+
+                </div>
+
+
+                <span class="pdx-category" id="pdx-category">
+                    DAILY HYDRATION
+                </span>
+
+
+                <h1 id="pdx-name">
+                    Hydrating Daily Face Moisturizer
+                </h1>
+
+
+                <p class="pdx-description" id="pdx-description">
+                    Keep your skin feeling soft, smooth and refreshed
+                    with our Hydrating Daily Face Moisturizer. Its
+                    lightweight formula helps maintain skin moisture
+                    and provides everyday hydration without leaving
+                    your skin feeling heavy or greasy.
+                </p>
+
+
+                <div class="pdx-price-row">
+
+                    <strong id="pdx-price">₹349</strong>
+
+                    <span>Starting price</span>
+
+                </div>
+
+
+                <div class="pdx-divider"></div>
+
+
+                <h3 class="pdx-subheading">
+                    PRODUCT HIGHLIGHTS
+                </h3>
+
+
+                <ul class="pdx-highlights" id="pdx-highlights">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Helps maintain everyday skin hydration
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Leaves skin feeling soft and smooth
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Lightweight and comfortable texture
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Ideal for daily skincare routines
+                    </li>
+
+                </ul>
+
+
+                <div class="pdx-size-area">
+
+                    <span class="pdx-subheading">
+                        PRODUCT CATEGORY
+                    </span>
+
+                    <div class="pdx-size-value" id="pdx-size">
+                        Moisturizers
+                    </div>
+
+                </div>
+
+
+                <div class="pdx-actions">
+
+                    <a href="contact.html" class="pdx-primary-btn">
+                        ENQUIRE ABOUT PRODUCT
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="products.html" class="pdx-secondary-btn">
+                        BACK TO PRODUCTS
+                    </a>
+
+                </div>
+
+
+                <div class="pdx-help-note">
+
+                    <i class="fas fa-headset"></i>
+
+                    <span>
+                        Need help choosing? Contact our skincare team.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+    <!-- PRODUCT DESCRIPTION -->
+
+    <section class="pdx-description-section">
+
+        <div class="pdx-container pdx-description-layout">
+
+            <div>
+                <span class="pdx-eyebrow">GET TO KNOW YOUR PRODUCT</span>
+
+                <h2>
+                    A Thoughtful Addition to
+                    <span>Your Skincare Routine</span>
+                </h2>
+            </div>
+
+            <div>
+                <p id="pdx-long-description">
+                    Explore skincare essentials selected to complement
+                    your everyday self-care routine.
+                </p>
+
+                <p>
+                    Every skin is different. Review the product label,
+                    ingredient information and directions before use
+                    to make an informed skincare choice.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT BENEFITS -->
+
+    <section class="pdx-benefits-section">
+
+        <div class="pdx-container">
+
+            <div class="pdx-heading">
+                <span class="pdx-eyebrow">WHY EXPLORE THIS PRODUCT</span>
+                <h2>Designed Around <span>Your Daily Care</span></h2>
+                <p>
+                    Discover how this product fits into your
+                    everyday skincare routine.
+                </p>
+            </div>
+
+            <div class="pdx-benefits-grid" id="pdx-benefits">
+
+                <article class="pdx-benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Everyday Care</h3>
+                    <p>A simple addition to your skincare routine.</p>
+                </article>
+
+                <article class="pdx-benefit-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Personal Routine</h3>
+                    <p>Choose products based on your individual skin needs.</p>
+                </article>
+
+                <article class="pdx-benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Thoughtful Choices</h3>
+                    <p>Understand the product before adding it to your routine.</p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW TO USE -->
+
+    <section class="pdx-usage-section">
+
+        <div class="pdx-container">
+
+            <div class="pdx-heading">
+                <span class="pdx-eyebrow">YOUR SKINCARE ROUTINE</span>
+                <h2>How to Use <span>This Product</span></h2>
+                <p>
+                    Follow the product packaging for the exact
+                    application instructions.
+                </p>
+            </div>
+
+            <div class="pdx-usage-grid">
+
+                <div class="pdx-usage-card">
+                    <span>01</span>
+                    <i class="fas fa-book-open"></i>
+                    <h3>Read Instructions</h3>
+                    <p>
+                        Check the label for product-specific directions
+                        and precautions.
+                    </p>
+                </div>
+
+                <div class="pdx-usage-card">
+                    <span>02</span>
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Apply as Directed</h3>
+                    <p>
+                        Use the recommended amount and follow the
+                        instructions provided.
+                    </p>
+                </div>
+
+                <div class="pdx-usage-card">
+                    <span>03</span>
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Build Your Routine</h3>
+                    <p>
+                        Use consistently according to the product
+                        directions and your skin's needs.
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="pdx-disclaimer">
+                Patch test before first use. Discontinue use if irritation
+                occurs and seek professional advice if needed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT INFORMATION -->
+
+    <section class="pdx-details-section">
+
+        <div class="pdx-container pdx-details-layout">
+
+            <div class="pdx-details-intro">
+                <span class="pdx-eyebrow">PRODUCT INFORMATION</span>
+                <h2>Details That <span>Matter</span></h2>
+                <p>
+                    Review the basic product information before
+                    making your skincare choice.
+                </p>
+            </div>
+
+            <div class="pdx-details-table">
+
+                <div>
+                    <span>Product Name</span>
+                    <strong id="pdx-detail-name">Face Cleanser</strong>
+                </div>
+
+                <div>
+                    <span>Category</span>
+                    <strong id="pdx-detail-category">Cleansing</strong>
+                </div>
+
+                <div>
+                    <span>Brand</span>
+                    <strong>Glow & Grace</strong>
+                </div>
+
+                <div>
+                    <span>Starting Price</span>
+                    <strong id="pdx-detail-price">₹299</strong>
+                </div>
+
+                <div>
+                    <span>Usage</span>
+                    <strong>Refer to product label</strong>
+                </div>
+
+                <div>
+                    <span>Storage</span>
+                    <strong>Refer to packaging instructions</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT FAQ -->
+
+    <section class="pdx-faq-section">
+
+        <div class="pdx-container">
+
+            <div class="pdx-heading">
+                <span class="pdx-eyebrow">HELPFUL INFORMATION</span>
+                <h2>Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="pdx-faq-list">
+
+                <div class="pdx-faq-item">
+                    <button type="button" class="pdx-faq-question"
+                            aria-expanded="false">
+                        How do I choose the right product?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pdx-faq-answer">
+                        <p>
+                            Consider your skin type, skin concerns and
+                            the product's ingredient information. You can
+                            also contact our team for product guidance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pdx-faq-item">
+                    <button type="button" class="pdx-faq-question"
+                            aria-expanded="false">
+                        Can I use this product every day?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pdx-faq-answer">
+                        <p>
+                            Follow the frequency and usage instructions
+                            provided on the product packaging.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pdx-faq-item">
+                    <button type="button" class="pdx-faq-question"
+                            aria-expanded="false">
+                        Where can I find the ingredients?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pdx-faq-answer">
+                        <p>
+                            Refer to the product packaging for the
+                            complete ingredient list and precautions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pdx-faq-item">
+                    <button type="button" class="pdx-faq-question"
+                            aria-expanded="false">
+                        How can I enquire about this product?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pdx-faq-answer">
+                        <p>
+                            Visit our Contact page and send your enquiry
+                            to the Glow & Grace team.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- =====================================
+     DAILY HYDRATION CTA SECTION
+     GLOW & GRACE
+===================================== -->
+
+<section class="pdx-cta">
+
+    <div class="pdx-cta-container">
+
+        <div class="pdx-cta-content">
+
+            <span class="pdx-cta-label">
+                YOUR DAILY DOSE OF HYDRATION
+            </span>
+
+            <h2>
+                Give Your Skin the
+                <span>Hydration It Deserves</span>
+            </h2>
+
+            <p>
+                Keep your skincare routine simple and refreshing.
+                Discover everyday hydration that helps your skin
+                feel soft, smooth and comfortable.
+            </p>
+
+            <div class="pdx-cta-actions">
+
+                <a href="contact.html" class="pdx-cta-primary">
+                    ENQUIRE NOW
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="products.html" class="pdx-cta-secondary">
+                    EXPLORE PRODUCTS
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="pdx-cta-decoration">
+            <span class="pdx-cta-circle"></span>
+            <span class="pdx-cta-small-circle"></span>
+            <i class="fas fa-droplet"></i>
+        </div>
+
+    </div>
+
+</section>
+  
+
+</main>
+<!--footer-->
+
+<footer class="footer">
+
+    <div class="footer-bar">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-logo">
+                    <img src="Images/g&glogo1.png" alt="Glow & Grace Logo">
+                </div>
+
+                <div class="footer-brand-title">
+                    <h2>GLOW <span>& GRACE</span></h2>
+                    <p>SKINCARE • BEAUTY • WELLNESS</p>
+                </div>
+
+            </div>
+
+            <div class="brand-info">
+                <p>
+                    Thoughtful skincare, simple routines and everyday
+                    moments of self-care. Every kind of skin deserves care.
+                </p>
+            </div>
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+            <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+            <a href="services.html"><i class="fa-solid fa-chevron-right"></i> Skincare</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+            <a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blogs</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Skincare</h3>
+
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Cleansers</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Serums</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Moisturizers</a>
+            <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Sunscreen</a>
+            <a href="services.html"><i class="fa-solid fa-chevron-right"></i> Skin Consultation</a>
+            <a href="booking.html"><i class="fa-solid fa-chevron-right"></i> Book Consultation</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Customer Support</h3>
+
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> FAQs</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Shipping Information</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Returns & Refunds</a>
+            <a href="privacy-policy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
+            <a href="terms-of-service.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a>
+            <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Support</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+            <p><i class="fa-solid fa-envelope"></i> hello@glowandgrace.com</p>
+
+            <p><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</p>
+
+            <p><i class="fa-regular fa-clock"></i> Mon - Sat: 9 AM - 6 PM</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            Copyright © 2026 Glow & Grace. All Rights Reserved.
+        </p>
+
+        <div class="footer-legal-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   GLOW & GRACE
+   DYNAMIC PRODUCT DETAILS
+========================================= */
+
+const productsData = {
+
+    cleanser: {
+        name: "Face Cleansers",
+        category: "DAILY CLEANSING",
+        price: "₹299",
+        image: "Images/pp1.jpg",
+        description:
+            "Explore gentle cleansing essentials selected for your everyday skincare routine. Find a cleanser that suits your personal skin care needs.",
+        longDescription:
+            "A good skincare routine starts with cleansing. Explore face cleansers designed for everyday use and choose one based on your skin type, ingredient preferences and product instructions.",
+        highlights: [
+            "Everyday facial cleansing",
+            "Options for different skin needs",
+            "An essential first step in skincare"
+        ],
+        benefits: [
+            {
+                icon: "fa-water",
+                title: "Daily Cleansing",
+                text: "Make cleansing a simple part of your everyday routine."
+            },
+            {
+                icon: "fa-leaf",
+                title: "Skin Type Choices",
+                text: "Explore options based on your individual skin needs."
+            },
+            {
+                icon: "fa-spa",
+                title: "Fresh Routine",
+                text: "Begin your skincare ritual with a cleansing step."
+            }
+        ]
+    },
+
+    serum: {
+        name: "Face Serums",
+        category: "TARGETED SKINCARE",
+        price: "₹499",
+        image: "Images/pp2.jpg",
+        description:
+            "Discover face serums designed to complement your skincare routine. Explore different formulas and select according to your skin needs.",
+        longDescription:
+            "Face serums are a targeted step in many skincare routines. Understand the product ingredients and choose a formula that complements your existing skincare products.",
+        highlights: [
+            "Targeted skincare options",
+            "Different formulas to explore",
+            "Easy to include in a routine"
+        ],
+        benefits: [
+            {
+                icon: "fa-tint",
+                title: "Hydration Options",
+                text: "Explore serum options designed around hydration needs."
+            },
+            {
+                icon: "fa-star",
+                title: "Targeted Care",
+                text: "Choose formulas based on your skincare preferences."
+            },
+            {
+                icon: "fa-spa",
+                title: "Routine Friendly",
+                text: "Add a serum as a considered step in your routine."
+            }
+        ]
+    },
+
+    moisturizer: {
+        name: "Moisturizers",
+        category: "DAILY HYDRATION",
+        price: "₹349",
+        image: "Images/pp3.jpg",
+        description:
+            "Explore daily moisturizers that complement your skincare routine. Find a texture and formula that suits your personal preferences.",
+        longDescription:
+            "Moisturizers are an important part of many daily skincare routines. Explore available options and review the ingredients and product directions before choosing.",
+        highlights: [
+            "Daily moisturizing options",
+            "Different textures to explore",
+            "An essential skincare step"
+        ],
+        benefits: [
+            {
+                icon: "fa-tint",
+                title: "Moisture Care",
+                text: "Explore products designed for everyday moisturizing."
+            },
+            {
+                icon: "fa-feather-alt",
+                title: "Texture Choices",
+                text: "Find a texture that suits your personal preference."
+            },
+            {
+                icon: "fa-heart",
+                title: "Daily Comfort",
+                text: "Make moisturizing part of your self-care routine."
+            }
+        ]
+    },
+
+    sunscreen: {
+        name: "Sunscreens",
+        category: "DAILY PROTECTION",
+        price: "₹399",
+        image: "Images/pp4.jpg",
+        description:
+            "Explore sunscreen essentials for your daily sun protection routine. Review the SPF, broad-spectrum coverage and application instructions on each product.",
+        longDescription:
+            "Sun protection is an important part of daytime skincare. Choose a sunscreen with suitable broad-spectrum protection and follow its label for application and reapplication.",
+        highlights: [
+            "Explore daily sun protection",
+            "Check SPF and broad-spectrum details",
+            "Follow application and reapplication directions"
+        ],
+        benefits: [
+            {
+                icon: "fa-sun",
+                title: "Sun Care",
+                text: "Make sun protection part of your daytime routine."
+            },
+            {
+                icon: "fa-shield-alt",
+                title: "Protection Information",
+                text: "Review SPF and broad-spectrum details before choosing."
+            },
+            {
+                icon: "fa-calendar-check",
+                title: "Daily Habit",
+                text: "Follow product directions for regular application."
+            }
+        ]
+    },
+
+    facemask: {
+        name: "Face Masks",
+        category: "WEEKLY SKINCARE",
+        price: "₹199",
+        image: "Images/pp5.jpg",
+        description:
+            "Discover face masks for an occasional skincare ritual. Explore different product options and choose according to your skin preferences.",
+        longDescription:
+            "Face masks can be an occasional addition to your skincare routine. Review the ingredients, directions and recommended frequency on the packaging before use.",
+        highlights: [
+            "Options for occasional skincare",
+            "Different product formats",
+            "Follow recommended usage directions"
+        ],
+        benefits: [
+            {
+                icon: "fa-spa",
+                title: "Self-Care Time",
+                text: "Create a relaxing moment in your skincare routine."
+            },
+            {
+                icon: "fa-leaf",
+                title: "Product Choices",
+                text: "Explore different mask formats and ingredients."
+            },
+            {
+                icon: "fa-heart",
+                title: "Weekly Ritual",
+                text: "Include a mask when suitable for your skin needs."
+            }
+        ]
+    },
+
+    eyecare: {
+        name: "Eye Care",
+        category: "DELICATE CARE",
+        price: "₹449",
+        image: "Images/pp6.jpg",
+        description:
+            "Explore eye care essentials created for the delicate area around your eyes. Review product details and choose according to your needs.",
+        longDescription:
+            "The skin around the eyes is delicate. Select eye care products carefully, review their ingredient information and follow the specific application directions.",
+        highlights: [
+            "Dedicated eye care options",
+            "Designed for the delicate eye area",
+            "Follow product-specific directions"
+        ],
+        benefits: [
+            {
+                icon: "fa-eye",
+                title: "Dedicated Care",
+                text: "Explore products intended for the eye area."
+            },
+            {
+                icon: "fa-feather-alt",
+                title: "Gentle Application",
+                text: "Follow the product's recommended application method."
+            },
+            {
+                icon: "fa-spa",
+                title: "Routine Addition",
+                text: "Include eye care as a considered skincare step."
+            }
+        ]
+    }
+
+};
+
+
+/* GET PRODUCT ID FROM URL */
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+
+const selectedProduct = productsData[productId];
+
+
+/* DISPLAY PRODUCT INFORMATION */
+
+if (selectedProduct) {
+
+    document.getElementById("pdx-image").src =
+        selectedProduct.image;
+
+    document.getElementById("pdx-image").alt =
+        selectedProduct.name;
+
+    document.getElementById("pdx-category").textContent =
+        selectedProduct.category;
+
+    document.getElementById("pdx-name").textContent =
+        selectedProduct.name;
+
+    document.getElementById("pdx-breadcrumb-name").textContent =
+        selectedProduct.name;
+
+    document.getElementById("pdx-description").textContent =
+        selectedProduct.description;
+
+    document.getElementById("pdx-price").textContent =
+        selectedProduct.price;
+
+    document.getElementById("pdx-long-description").textContent =
+        selectedProduct.longDescription;
+
+    document.getElementById("pdx-size").textContent =
+        selectedProduct.name;
+
+    document.getElementById("pdx-detail-name").textContent =
+        selectedProduct.name;
+
+    document.getElementById("pdx-detail-category").textContent =
+        selectedProduct.category;
+
+    document.getElementById("pdx-detail-price").textContent =
+        selectedProduct.price;
+
+
+    /* PRODUCT HIGHLIGHTS */
+
+    const highlightsContainer =
+        document.getElementById("pdx-highlights");
+
+    highlightsContainer.innerHTML = "";
+
+    selectedProduct.highlights.forEach(highlight => {
+
+        const li = document.createElement("li");
+        li.textContent = highlight;
+
+        highlightsContainer.appendChild(li);
+
+    });
+
+
+    /* PRODUCT BENEFITS */
+
+    const benefitsContainer =
+        document.getElementById("pdx-benefits");
+
+    benefitsContainer.innerHTML = "";
+
+    selectedProduct.benefits.forEach(benefit => {
+
+        const card = document.createElement("article");
+
+        card.className = "pdx-benefit-card";
+
+        const icon = document.createElement("i");
+        icon.className = `fas ${benefit.icon}`;
+
+        const heading = document.createElement("h3");
+        heading.textContent = benefit.title;
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = benefit.text;
+
+        card.append(icon, heading, paragraph);
+
+        benefitsContainer.appendChild(card);
+
+    });
+
+
+    /* UPDATE BROWSER TITLE */
+
+    document.title =
+        `${selectedProduct.name} | Glow & Grace`;
+
+} else {
+
+    /* INVALID PRODUCT ID */
+
+    document.querySelector(".pdx-page").innerHTML = `
+        <section style="padding:100px 20px;text-align:center;">
+            <h2>Product Not Found</h2>
+            <p>Please explore our available skincare products.</p>
+            <a href="products.html">Back to Products</a>
+        </section>
+    `;
+
+}
+
+
+/* FAQ ACCORDION */
+
+const faqItems = document.querySelectorAll(".pdx-faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".pdx-faq-question");
+
+    question.addEventListener("click", () => {
+
+        const isOpen = item.classList.contains("active");
+
+        faqItems.forEach(faq => {
+
+            faq.classList.remove("active");
+
+            faq.querySelector(".pdx-faq-question")
+                .setAttribute("aria-expanded", "false");
+
+        });
+
+        if (!isOpen) {
+
+            item.classList.add("active");
+
+            question.setAttribute("aria-expanded", "true");
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>

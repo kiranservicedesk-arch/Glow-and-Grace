@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now | Glow & Grace</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --surface: #FFFFFF;
+            --soft-bg: #FFF5F7;
+            --text-color: #263B3A;
+            --paragraph-color: #687977;
+            --primary-color: #D98FA5;
+            --primary-dark: #BD718B;
+            --secondary-color: #167D78;
+            --secondary-dark: #105F5B;
+            --border-color: rgba(217,143,165,0.30);
+            --shadow-color: rgba(0,0,0,0.06);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #101B1B;
+            --surface: #172525;
+            --soft-bg: #1B2B2A;
+            --text-color: #EDF5F2;
+            --paragraph-color: #B5C6C1;
+            --primary-color: #E5A0B5;
+            --primary-dark: #E5A0B5;
+            --secondary-color: #55B8AE;
+            --secondary-dark: #3C9C93;
+            --border-color: rgba(229,160,181,0.25);
+            --shadow-color: rgba(0,0,0,0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'DM Sans', sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .order-page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .order-card {
+            width: 100%;
+            max-width: 1050px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px var(--shadow-color);
+        }
+
+        /* LEFT PANEL */
+
+        .order-intro {
+            background: var(--soft-bg);
+            padding: 38px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .order-intro-label {
+            color: var(--secondary-color);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .order-intro h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            line-height: 1.25;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .order-intro h1 span {
+            color: var(--primary-dark);
+        }
+
+        .order-intro p {
+            color: var(--paragraph-color);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .order-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .order-benefit {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--text-color);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .order-benefit i {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--secondary-color);
+        }
+
+        /* FORM PANEL */
+
+        .order-form-area {
+            padding: 25px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* TOP CONTROLS */
+
+        .order-controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .order-control-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .order-control-btn:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+        }
+
+        /* LOGO */
+
+        .order-form-logo {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .order-form-logo a {
+            display: inline-block;
+        }
+
+        .order-form-logo img {
+            width: 155px;
+            height: 65px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .order-form-heading {
+            margin-bottom: 17px;
+            text-align: center;
+        }
+
+        .order-form-heading span {
+            color: var(--primary-dark);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .order-form-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: var(--text-color);
+            margin-top: 5px;
+        }
+
+        /* FORM */
+
+        .order-form {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .order-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        .order-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .order-field label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .order-field input,
+        .order-field select,
+        .order-field textarea {
+            width: 100%;
+            min-width: 0;
+            height: 39px;
+            padding: 0 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            outline: none;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+        }
+
+        .order-field textarea {
+            height: 52px;
+            padding: 9px 12px;
+            resize: none;
+        }
+
+        .order-field input:focus,
+        .order-field select:focus,
+        .order-field textarea:focus {
+            border-color: var(--secondary-color);
+        }
+
+        .order-field input::placeholder,
+        .order-field textarea::placeholder {
+            color: var(--paragraph-color);
+            opacity: 0.8;
+        }
+
+        .order-submit {
+            width: 100%;
+            height: 44px;
+            margin-top: 3px;
+            border: none;
+            border-radius: 5px;
+            background: var(--secondary-color);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .order-submit:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .order-submit i {
+            margin-inline-start: 8px;
+        }
+
+        .order-note {
+            margin-top: 11px;
+            color: var(--paragraph-color);
+            font-size: 10px;
+            text-align: center;
+        }
+
+        /* RTL MODE */
+
+        html[dir="rtl"] .order-intro {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .order-benefit {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        html[dir="rtl"] .order-controls {
+            justify-content: flex-start;
+        }
+
+        html[dir="rtl"] .order-field {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .order-field input,
+        html[dir="rtl"] .order-field select,
+        html[dir="rtl"] .order-field textarea {
+            direction: rtl;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .order-form {
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .order-form-row {
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .order-submit {
+            direction: rtl;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .order-card {
+                max-width: 700px;
+            }
+
+            .order-intro {
+                padding: 25px 20px;
+            }
+
+            .order-intro h1 {
+                font-size: 27px;
+            }
+
+            .order-form-area {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            html, body {
+                height: auto;
+                min-height: 100%;
+                overflow: auto;
+            }
+
+            .order-page {
+                height: auto;
+                min-height: 100vh;
+                padding: 16px;
+                overflow: visible;
+            }
+
+            .order-card {
+                grid-template-columns: 1fr;
+            }
+
+            .order-intro {
+                padding: 25px 22px;
+            }
+
+            .order-intro h1 {
+                font-size: 28px;
+            }
+
+            .order-intro p {
+                margin-bottom: 15px;
+            }
+
+            .order-benefits {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .order-form-area {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .order-form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .order-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-height: 720px) and (min-width: 651px) {
+            .order-intro {
+                padding: 20px 28px;
+            }
+
+            .order-form-area {
+                padding: 12px 28px;
+            }
+
+            .order-form-logo {
+                margin-bottom: 5px;
+            }
+
+            .order-form-logo img {
+                height: 45px;
+            }
+
+            .order-intro h1 {
+                font-size: 27px;
+            }
+
+            .order-form {
+                gap: 8px;
+            }
+
+            .order-form-heading {
+                margin-bottom: 10px;
+            }
+
+            .order-controls {
+                margin-bottom: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="order-page">
+
+        <div class="order-card">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="order-intro">
+
+                <span class="order-intro-label">
+                    GLOW & GRACE
+                </span>
+
+                <h1>
+                    Your Glow,<br>
+                    <span>Your Signature.</span>
+                </h1>
+
+                <p>
+                    Make your skincare routine special with products
+                    designed to care for your skin. Place your order
+                    and our team will get in touch with you.
+                </p>
+
+                <div class="order-benefits">
+
+                    <div class="order-benefit">
+                        <i class="fas fa-leaf"></i>
+                        <span>Thoughtful Skincare</span>
+                    </div>
+
+                    <div class="order-benefit">
+                        <i class="fas fa-heart"></i>
+                        <span>Everyday Skin Care</span>
+                    </div>
+
+                    <div class="order-benefit">
+                        <i class="fas fa-headset"></i>
+                        <span>Personal Assistance</span>
+                    </div>
+
+                    <div class="order-benefit">
+                        <i class="fas fa-box"></i>
+                        <span>Order Enquiry Support</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT FORM CONTENT -->
+
+            <div class="order-form-area">
+
+                <!-- THEME AND RTL CONTROLS -->
+
+                <div class="order-controls">
+
+                    <button
+                        type="button"
+                        class="order-control-btn"
+                        id="orderThemeToggle"
+                        aria-label="Toggle dark mode"
+                        title="Light / Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="order-control-btn"
+                        id="orderRtlToggle"
+                        aria-label="Toggle RTL mode"
+                        title="LTR / RTL Mode">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- LOGO -->
+
+                <div class="order-form-logo">
+
+                    <a href="index.html">
+                        <img src="Images/g&glogo1.png" alt="Glow & Grace Logo">
+                    </a>
+
+                </div>
+
+
+                <div class="order-form-heading">
+
+                    <span>LET'S GET STARTED</span>
+
+                    <h2>Place Your Order</h2>
+
+                </div>
+
+
+                <!-- ORDER FORM -->
+
+                <form class="order-form" id="orderForm">
+
+                    <div class="order-form-row">
+
+                        <div class="order-field">
+                            <label for="customerName">Full Name</label>
+                            <input type="text" id="customerName"
+                                name="customerName"
+                                placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="order-field">
+                            <label for="customerPhone">Phone Number</label>
+                            <input type="tel" id="customerPhone"
+                                name="customerPhone"
+                                placeholder="Enter phone number"
+                                pattern="[0-9]{10}"
+                                maxlength="10" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-form-row">
+
+                        <div class="order-field">
+                            <label for="customerEmail">Email Address</label>
+                            <input type="email" id="customerEmail"
+                                name="customerEmail"
+                                placeholder="Enter email address" required>
+                        </div>
+
+                        <div class="order-field">
+                            <label for="productName">Select Product</label>
+                            <select id="productName" name="productName" required>
+                                <option value="">Choose product</option>
+                                <option>Gentle Daily Face Cleanser</option>
+                                <option>Vitamin C Brightening Face Serum</option>
+                                <option>Hyaluronic Hydration Serum</option>
+                                <option>Hydrating Daily Face Moisturizer</option>
+                                <option>Daily Shield SPF 50 Sunscreen</option>
+                                <option>Refreshing Glow Face Mask</option>
+                                <option>Hydrating Under Eye Cream</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-form-row">
+
+                        <div class="order-field">
+                            <label for="quantity">Quantity</label>
+                            <select id="quantity" name="quantity" required>
+                                <option value="">Select quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+                        <div class="order-field">
+                            <label for="customerCity">City</label>
+                            <input type="text" id="customerCity"
+                                name="customerCity"
+                                placeholder="Enter your city" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-field">
+
+                        <label for="customerAddress">
+                            Delivery Address
+                        </label>
+
+                        <textarea id="customerAddress"
+                            name="customerAddress"
+                            placeholder="Enter your complete delivery address"
+                            required></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="order-submit">
+                        SUBMIT ORDER ENQUIRY
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <p class="order-note">
+                    Our team will contact you to confirm your order details.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        // THEME TOGGLE
+
+        const themeButton = document.getElementById("orderThemeToggle");
+        const themeIcon = themeButton.querySelector("i");
+
+        function applyTheme(theme) {
+
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                themeIcon.className = "fas fa-sun";
+                themeButton.title = "Switch to Light Mode";
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+                themeIcon.className = "fas fa-moon";
+                themeButton.title = "Switch to Dark Mode";
+            }
+
+            localStorage.setItem("gg-theme", theme);
+        }
+
+        applyTheme(localStorage.getItem("gg-theme") || "light");
+
+        themeButton.addEventListener("click", function () {
+
+            const currentTheme =
+                document.documentElement.getAttribute("data-theme");
+
+            applyTheme(currentTheme === "dark" ? "light" : "dark");
+
+        });
+
+
+        // RTL TOGGLE
+
+        const rtlButton = document.getElementById("orderRtlToggle");
+        const rtlIcon = rtlButton.querySelector("i");
+
+        function applyDirection(direction) {
+
+            document.documentElement.setAttribute("dir", direction);
+
+            if (direction === "rtl") {
+                rtlIcon.className = "fas fa-align-left";
+                rtlButton.title = "Switch to LTR Mode";
+            } else {
+                rtlIcon.className = "fas fa-align-right";
+                rtlButton.title = "Switch to RTL Mode";
+            }
+
+            localStorage.setItem("gg-direction", direction);
+        }
+
+        applyDirection(localStorage.getItem("gg-direction") || "ltr");
+
+        rtlButton.addEventListener("click", function () {
+
+            const currentDirection =
+                document.documentElement.getAttribute("dir");
+
+            applyDirection(currentDirection === "rtl" ? "ltr" : "rtl");
+
+        });
+
+
+        // PRODUCT AUTO SELECTION FROM URL
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedProduct = urlParams.get("product");
+
+        if (selectedProduct) {
+
+            const productSelect = document.getElementById("productName");
+
+            for (const option of productSelect.options) {
+
+                if (
+                    option.text.toLowerCase() ===
+                    selectedProduct.toLowerCase()
+                ) {
+                    productSelect.value = option.value;
+                    break;
+                }
+
+            }
+
+        }
+
+
+        // ORDER FORM DEMO SUBMISSION
+
+        document.getElementById("orderForm").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            alert(
+                "Thank you! Your order enquiry has been received. Our team will contact you soon."
+            );
+
+            this.reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
