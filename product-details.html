@@ -10,1063 +10,19 @@
     <link rel="icon" type="image/png" href="Images/g&glogo1.png">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="products.css">
-    <link rel="stylessheet" href="product-details.css">
-    <script src="main.js"></script>
+   <link rel="stylesheet" href="product-details.css">
+    <script src="main.js" defer></script>
     <script src="product-details.js"></script>
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-
-/* =====================================
-   PRODUCT DETAILS HERO
-===================================== */
-
-.pd-hero {
-    width: 100%;
-    min-height: 620px;
-    padding: 70px 5%;
-    background: var(--bg-color);
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.pd-hero-container {
-    max-width: 1250px;
-    min-height: 480px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 55px;
-}
-
-/* LEFT CONTENT */
-
-.pd-hero-content {
-    min-width: 0;
-}
-
-.pd-hero-tag {
-    color: var(--secondary-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-}
-
-.pd-hero-content h1 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 4.5vw, 58px);
-    line-height: 1.2;
-    margin: 22px 0;
-}
-
-.pd-hero-content h1 span {
-    display: block;
-    color: var(--primary-color);
-}
-
-.pd-hero-content > p {
-    color: var(--paragraph-color);
-    font-size: 15px;
-    line-height: 1.9;
-    max-width: 520px;
-    margin-bottom: 25px;
-}
-
-/* HIGHLIGHTS */
-
-.pd-hero-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    margin-bottom: 32px;
-}
-
-.pd-hero-highlights span {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    color: var(--text-color);
-    font-size: 13px;
-}
-
-.pd-hero-highlights i {
-    color: var(--secondary-color);
-}
-
-/* BUTTONS */
-
-.pd-hero-actions {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 22px;
-}
-
-.pd-hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 24px;
-
-    background: var(--secondary-color);
-    color: #fff;
-    text-decoration: none;
-
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-}
-
-.pd-hero-btn:hover {
-    background: var(--secondary-dark);
-    transform: translateY(-3px);
-}
-
-.pd-hero-link {
-    color: var(--text-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.pd-hero-link:hover {
-    color: var(--secondary-color);
-}
-
-/* RIGHT VISUAL */
-
-.pd-hero-visual {
-    position: relative;
-    min-width: 0;
-    height: 500px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pd-hero-image-bg {
-    position: absolute;
-    width: 85%;
-    height: 90%;
-    background: var(--soft-bg);
-    border-radius: 48% 48% 12px 12px;
-}
-
-.pd-hero-visual img {
-    position: relative;
-    z-index: 1;
-    width: 82%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 48% 48% 12px 12px;
-}
-
-/* IMAGE NOTE */
-
-.pd-hero-note {
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    bottom: 35px;
-
-    padding: 17px 22px;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-}
-
-.pd-hero-note span {
-    display: block;
-    color: var(--paragraph-color);
-    font-size: 9px;
-    letter-spacing: 2px;
-}
-
-.pd-hero-note strong {
-    display: block;
-    color: var(--secondary-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .pd-hero {
-        padding: 55px 4%;
-    }
-
-    .pd-hero-container {
-        gap: 25px;
-    }
-
-    .pd-hero-visual {
-        height: 420px;
-    }
-
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .pd-hero {
-        padding: 45px 18px;
-    }
-
-    .pd-hero-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .pd-hero-content h1 {
-        font-size: 39px;
-    }
-
-    .pd-hero-content > p {
-        font-size: 14px;
-    }
-
-    .pd-hero-visual {
-        height: 350px;
-    }
-
-    .pd-hero-visual img {
-        width: 85%;
-    }
-
-    .pd-hero-note {
-        right: 0;
-        bottom: 15px;
-    }
-
-    .pd-hero-actions {
-        gap: 17px;
-    }
-
-}
-
-
-/* =========================================
-   DYNAMIC PRODUCT DETAILS PAGE
-   GLOW & GRACE
-========================================= */
-
-.pdx-page {
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
-.pdx-container {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-}
-
-.pdx-overview,
-.pdx-description-section,
-.pdx-benefits-section,
-.pdx-usage-section,
-.pdx-details-section,
-.pdx-faq-section {
-    width: 100%;
-    padding: 85px 5%;
-    box-sizing: border-box;
-}
-
-.pdx-eyebrow {
-    display: inline-block;
-    color: var(--secondary-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 13px;
-}
-
-/* PRODUCT OVERVIEW */
-
-.pdx-product-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 65px;
-}
-
-.pdx-gallery {
-    min-width: 0;
-}
-
-.pdx-main-image {
-    height: 560px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    background: var(--soft-bg);
-}
-
-.pdx-main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.pdx-image-tag {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-    padding: 10px 15px;
-    background: var(--surface);
-    color: var(--secondary-color);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.pdx-info {
-    min-width: 0;
-}
-
-.pdx-breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-    font-size: 12px;
-    color: var(--paragraph-color);
-}
-
-.pdx-breadcrumb a {
-    color: var(--paragraph-color);
-    text-decoration: none;
-}
-
-.pdx-breadcrumb span {
-    color: var(--secondary-color);
-}
-
-.pdx-category {
-    color: var(--secondary-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.pdx-info h1 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 4vw, 50px);
-    line-height: 1.2;
-    margin: 17px 0;
-}
-
-.pdx-description {
-    color: var(--paragraph-color);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-.pdx-price-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 25px 0;
-}
-
-.pdx-price-row strong {
-    color: var(--text-color);
-    font-size: 28px;
-}
-
-.pdx-price-row span {
-    color: var(--paragraph-color);
-    font-size: 12px;
-}
-
-.pdx-divider {
-    height: 1px;
-    background: var(--border-color);
-    margin: 25px 0;
-}
-
-.pdx-subheading {
-    display: block;
-    color: var(--text-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.3px;
-    margin-bottom: 15px;
-}
-
-.pdx-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-}
-
-.pdx-highlights li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--paragraph-color);
-    font-size: 13px;
-}
-
-.pdx-highlights li::before {
-    content: "\f00c";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: var(--secondary-color);
-}
-
-.pdx-size-value {
-    display: inline-block;
-    padding: 11px 17px;
-    border: 1px solid var(--border-color);
-    background: var(--surface);
-    color: var(--text-color);
-    font-size: 12px;
-    border-radius: 4px;
-}
-
-.pdx-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.pdx-primary-btn,
-.pdx-secondary-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px 19px;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-}
-
-.pdx-primary-btn {
-    color: #fff;
-    background: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-}
-
-.pdx-primary-btn:hover {
-    background: var(--secondary-dark);
-    border-color: var(--secondary-dark);
-}
-
-.pdx-secondary-btn {
-    color: var(--secondary-color);
-    background: transparent;
-    border: 1px solid var(--secondary-color);
-}
-
-.pdx-secondary-btn:hover {
-    color: #fff;
-    background: var(--secondary-color);
-}
-
-.pdx-help-note {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px;
-    margin-top: 25px;
-    background: var(--soft-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    color: var(--paragraph-color);
-    font-size: 12px;
-}
-
-.pdx-help-note i {
-    color: var(--secondary-color);
-}
-
-/* DESCRIPTION */
-
-.pdx-description-section {
-    background: var(--soft-bg);
-}
-
-.pdx-description-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.pdx-description-layout h2,
-.pdx-details-intro h2 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 42px);
-    line-height: 1.3;
-    margin: 0;
-}
-
-.pdx-description-layout h2 span,
-.pdx-details-intro h2 span {
-    color: var(--primary-color);
-}
-
-.pdx-description-layout > div:last-child p {
-    color: var(--paragraph-color);
-    font-size: 14px;
-    line-height: 1.9;
-    margin: 0 0 15px;
-}
-
-/* SECTION HEADING */
-
-.pdx-heading {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 45px;
-}
-
-.pdx-heading h2 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 42px);
-    margin: 5px 0 13px;
-}
-
-.pdx-heading h2 span {
-    color: var(--primary-color);
-}
-
-.pdx-heading > p {
-    color: var(--paragraph-color);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* BENEFITS */
-
-.pdx-benefits-section,
-.pdx-faq-section {
-    background: var(--soft-bg);
-}
-
-.pdx-benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.pdx-benefit-card {
-    padding: 32px 25px;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 9px;
-    transition: 0.3s ease;
-}
-
-.pdx-benefit-card:hover {
-    transform: translateY(-5px);
-}
-
-.pdx-benefit-card > i {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--soft-bg);
-    color: var(--secondary-color);
-    font-size: 20px;
-    margin-bottom: 22px;
-}
-
-.pdx-benefit-card h3 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin: 0 0 12px;
-}
-
-.pdx-benefit-card p {
-    color: var(--paragraph-color);
-    font-size: 13px;
-    line-height: 1.8;
-    margin: 0;
-}
-
-/* USAGE */
-
-.pdx-usage-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.pdx-usage-card {
-    position: relative;
-    padding: 35px 25px;
-    text-align: center;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 9px;
-}
-
-.pdx-usage-card > span {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: var(--primary-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-}
-
-.pdx-usage-card > i {
-    color: var(--secondary-color);
-    font-size: 27px;
-    margin: 15px 0 22px;
-}
-
-.pdx-usage-card h3 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-}
-
-.pdx-usage-card p {
-    color: var(--paragraph-color);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.pdx-disclaimer {
-    color: var(--paragraph-color);
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.7;
-    margin: 30px auto 0;
-}
-
-/* DETAILS TABLE */
-
-.pdx-details-layout {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    align-items: center;
-    gap: 60px;
-}
-
-.pdx-details-intro > p {
-    color: var(--paragraph-color);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.pdx-details-table {
-    padding: 25px 30px;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 9px;
-}
-
-.pdx-details-table > div {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 17px 0;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 13px;
-}
-
-.pdx-details-table > div:last-child {
-    border-bottom: none;
-}
-
-.pdx-details-table span {
-    color: var(--paragraph-color);
-}
-
-.pdx-details-table strong {
-    color: var(--text-color);
-    text-align: right;
-}
-
-/* FAQ */
-
-.pdx-faq-list {
-    max-width: 850px;
-    margin: auto;
-}
-
-.pdx-faq-item {
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 7px;
-    margin-bottom: 13px;
-    overflow: hidden;
-}
-
-.pdx-faq-question {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    padding: 21px;
-    border: none;
-    background: transparent;
-    color: var(--text-color);
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: left;
-    cursor: pointer;
-}
-
-.pdx-faq-question i {
-    color: var(--secondary-color);
-    transition: transform 0.3s ease;
-}
-
-.pdx-faq-item.active .pdx-faq-question i {
-    transform: rotate(45deg);
-}
-
-.pdx-faq-answer {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
-}
-
-.pdx-faq-answer p {
-    min-height: 0;
-    overflow: hidden;
-    margin: 0;
-    padding: 0 21px;
-    color: var(--paragraph-color);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.pdx-faq-item.active .pdx-faq-answer {
-    grid-template-rows: 1fr;
-}
-
-.pdx-faq-item.active .pdx-faq-answer p {
-    padding-bottom: 21px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-    .pdx-product-layout,
-    .pdx-description-layout,
-    .pdx-details-layout {
-        gap: 35px;
-    }
-
-    .pdx-main-image {
-        height: 450px;
-    }
-
-}
-
-@media (max-width: 650px) {
-
-    .pdx-overview,
-    .pdx-description-section,
-    .pdx-benefits-section,
-    .pdx-usage-section,
-    .pdx-details-section,
-    .pdx-faq-section {
-        padding: 60px 18px;
-    }
-
-    .pdx-product-layout,
-    .pdx-description-layout,
-    .pdx-details-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .pdx-main-image {
-        height: 360px;
-    }
-
-    .pdx-info h1 {
-        font-size: 38px;
-    }
-
-    .pdx-actions {
-        flex-direction: column;
-    }
-
-    .pdx-primary-btn,
-    .pdx-secondary-btn {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .pdx-benefits-grid,
-    .pdx-usage-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pdx-details-table {
-        padding: 18px;
-    }
-
-    .pdx-details-table > div {
-        font-size: 12px;
-    }
-
-    .pdx-faq-question {
-        padding: 18px;
-        font-size: 13px;
-    }
-
-}
-
-@media (max-width: 380px) {
-
-    .pdx-details-table > div {
-        flex-direction: column;
-        gap: 7px;
-    }
-
-    .pdx-details-table strong {
-        text-align: left;
-    }
-
-}
-
-/* =====================================
-   DAILY HYDRATION CTA SECTION
-===================================== */
-
-.pdx-cta {
-    padding: 85px 20px;
-    background: var(--soft-bg);
-    overflow: hidden;
-}
-
-.pdx-cta-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 65px 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-    overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    border-radius: 22px;
-}
-
-.pdx-cta-content {
-    max-width: 680px;
-    position: relative;
-    z-index: 2;
-}
-
-.pdx-cta-label {
-    display: inline-block;
-    color: var(--secondary-color);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-}
-
-.pdx-cta-content h2 {
-    color: var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 45px);
-    line-height: 1.25;
-    margin-bottom: 18px;
-}
-
-.pdx-cta-content h2 span {
-    color: var(--primary-color);
-    display: block;
-}
-
-.pdx-cta-content p {
-    color: var(--paragraph-color);
-    font-size: 15px;
-    line-height: 1.8;
-    max-width: 580px;
-    margin-bottom: 28px;
-}
-
-.pdx-cta-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.pdx-cta-primary,
-.pdx-cta-secondary {
-    min-height: 48px;
-    padding: 14px 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.pdx-cta-primary {
-    background: var(--secondary-color);
-    color: #ffffff;
-    border: 1px solid var(--secondary-color);
-}
-
-.pdx-cta-primary:hover {
-    background: var(--secondary-dark);
-    border-color: var(--secondary-dark);
-    transform: translateY(-3px);
-}
-
-.pdx-cta-secondary {
-    color: var(--text-color);
-    background: transparent;
-    border: 1px solid var(--border-color);
-}
-
-.pdx-cta-secondary:hover {
-    color: var(--primary-dark);
-    border-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-
-/* DECORATIVE ELEMENT */
-
-.pdx-cta-decoration {
-    width: 250px;
-    height: 250px;
-    flex-shrink: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pdx-cta-circle {
-    position: absolute;
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    background: var(--soft-bg);
-    border: 1px solid var(--border-color);
-}
-
-.pdx-cta-small-circle {
-    position: absolute;
-    width: 155px;
-    height: 155px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0.18;
-}
-
-.pdx-cta-decoration i {
-    position: relative;
-    z-index: 2;
-    font-size: 75px;
-    color: var(--secondary-color);
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-
-    .pdx-cta {
-        padding: 55px 16px;
-    }
-
-    .pdx-cta-container {
-        padding: 45px 25px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
-    }
-
-    .pdx-cta-decoration {
-        width: 150px;
-        height: 150px;
-        align-self: center;
-    }
-
-    .pdx-cta-circle {
-        width: 140px;
-        height: 140px;
-    }
-
-    .pdx-cta-small-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .pdx-cta-decoration i {
-        font-size: 48px;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .pdx-cta-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .pdx-cta-primary,
-    .pdx-cta-secondary {
-        width: 100%;
-    }
-
-}
-
-
-    </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -1140,9 +96,7 @@
 <main>
 
 
-<!-- =====================================
-     PRODUCT DETAILS HERO SECTION
-===================================== -->
+<!--PRODUCT DETAILS HERO SECTION-->
 
 <section class="pd-hero">
 
@@ -1208,10 +162,7 @@
 
 
 
-<!-- =========================================
-     DYNAMIC PRODUCT DETAILS CONTENT
-     GLOW & GRACE
-========================================= -->
+<!--DYNAMIC PRODUCT DETAILS CONTENT GLOW & GRACE-->
 
 <main class="pdx-page">
 
@@ -1238,18 +189,6 @@
                 <!-- PRODUCT INFORMATION -->
 
                 <div class="pdx-info">
-
-                    <div class="pdx-breadcrumb">
-                        <a href="index.html">Home</a>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="products.html">Products</a>
-                        <i class="fas fa-angle-right"></i>
-                        <span id="pdx-breadcrumb-name">Product Details</span>
-                    </div>
-
-                    <span class="pdx-category" id="pdx-category">
-                        DAILY SKINCARE
-                    </span>
 
                     <h1 id="pdx-name">Face Cleanser</h1>
 
@@ -1305,10 +244,7 @@
     </section>
 
 
-<!-- =====================================
-     FACE SERUM PRODUCT OVERVIEW
-     GLOW & GRACE
-===================================== -->
+<!--FACE SERUM PRODUCT OVERVIEW GLOW & GRACE-->
 
 <section class="pdx-overview" id="product-details">
 
@@ -1341,7 +277,7 @@
 
             <div class="pdx-info">
 
-                <div class="pdx-breadcrumb">
+               <!-- <div class="pdx-breadcrumb">
 
                     <a href="index.html">Home</a>
 
@@ -1352,7 +288,7 @@
                     <i class="fas fa-angle-right"></i>
 
                     <span id="pdx-breadcrumb-name">
-                        Face Serums
+                        Face Serums11
                     </span>
 
                 </div>
@@ -1360,7 +296,7 @@
 
                 <span class="pdx-category" id="pdx-category">
                     TARGETED SKINCARE
-                </span>
+                </span>-->
 
 
                 <h1 id="pdx-name">
@@ -1465,10 +401,7 @@
 </section>
 
 
-<!-- =====================================
-     MOISTURIZER PRODUCT OVERVIEW
-     GLOW & GRACE
-===================================== -->
+<!-- MOISTURIZER PRODUCT OVERVIEW GLOW & GRACE-->
 
 <section class="pdx-overview" id="product-details">
 
@@ -1500,28 +433,6 @@
             <!-- PRODUCT INFORMATION -->
 
             <div class="pdx-info">
-
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">
-                        Moisturizers
-                    </span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DAILY HYDRATION
-                </span>
-
 
                 <h1 id="pdx-name">
                     Hydrating Daily Face Moisturizer
@@ -1640,28 +551,6 @@
             <!-- PRODUCT INFORMATION - LEFT SIDE -->
 
             <div class="pdx-info">
-
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">
-                        Sunscreens
-                    </span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DAILY PROTECTION
-                </span>
-
 
                 <h1 id="pdx-name">
                     Daily Shield SPF 50 Sunscreen
@@ -1823,28 +712,6 @@
 
             <div class="pdx-info">
 
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">
-                        Face Masks
-                    </span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    WEEKLY SKINCARE
-                </span>
-
-
                 <h1 id="pdx-name">
                     Refreshing Glow Face Mask
                 </h1>
@@ -1947,11 +814,7 @@
 
 </section>
 
-<!-- =====================================
-     EYE CARE PRODUCT OVERVIEW
-     IMAGE RIGHT SIDE
-     GLOW & GRACE
-===================================== -->
+
 
 <section class="pdx-overview pdx-image-right" id="product-details">
 
@@ -1962,28 +825,6 @@
             <!-- PRODUCT INFORMATION - LEFT SIDE -->
 
             <div class="pdx-info">
-
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">
-                        Eye Care
-                    </span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DELICATE CARE
-                </span>
-
 
                 <h1 id="pdx-name">
                     Hydrating Under Eye Cream
@@ -2107,10 +948,7 @@
 
 </section>
 
-<!-- =====================================
-     VITAMIN C BRIGHTENING FACE SERUM
-     PRODUCT OVERVIEW
-===================================== -->
+<!-- VITAMIN C BRIGHTENING FACE SERUM PRODUCT OVERVIEW-->
 
 <section class="pdx-overview" id="product-details">
 
@@ -2140,26 +978,6 @@
             <!-- RIGHT SIDE CONTENT -->
 
             <div class="pdx-info">
-
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">Face Serum</span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    TARGETED SKINCARE
-                </span>
-
 
                 <h1 id="pdx-name">
                     Vitamin C Brightening Face Serum
@@ -2262,10 +1080,7 @@
 
 </section>
 
-<!-- =====================================
-     HYALURONIC HYDRATION SERUM
-     PRODUCT OVERVIEW
-===================================== -->
+<!--  HYALURONIC HYDRATION SERUM PRODUCT OVERVIEW -->
 
 <section class="pdx-overview pdx-image-right" id="product-details">
 
@@ -2296,27 +1111,7 @@
 
             <div class="pdx-info">
 
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">Hydration Serum</span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DEEP HYDRATION
-                </span>
-
-
-                <h1 id="pdx-name">
+             <h1 id="pdx-name">
                     Hyaluronic Hydration Serum
                 </h1>
 
@@ -2417,10 +1212,7 @@
 
 </section>
 
-<!-- =====================================
-     GENTLE DAILY FACE CLEANSER
-     PRODUCT OVERVIEW
-===================================== -->
+<!-- GENTLE DAILY FACE CLEANSER PRODUCT OVERVIEW-->
 
 <section class="pdx-overview" id="product-details">
 
@@ -2452,23 +1244,6 @@
             <div class="pdx-info">
 
                 <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">Face Cleanser</span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DAILY SKINCARE
-                </span>
 
 
                 <h1 id="pdx-name">
@@ -2572,10 +1347,7 @@
 
 </section>
 
-<!-- =====================================
-     DAILY HYDRATION
-     PRODUCT OVERVIEW
-===================================== -->
+<!-- DAILY HYDRATION PRODUCT OVERVIEW-->
 
 <section class="pdx-overview pdx-image-right" id="product-details">
 
@@ -2605,26 +1377,6 @@
             <!-- LEFT SIDE CONTENT -->
 
             <div class="pdx-info">
-
-                <div class="pdx-breadcrumb">
-
-                    <a href="index.html">Home</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <a href="products.html">Products</a>
-
-                    <i class="fas fa-angle-right"></i>
-
-                    <span id="pdx-breadcrumb-name">Daily Hydration</span>
-
-                </div>
-
-
-                <span class="pdx-category" id="pdx-category">
-                    DAILY HYDRATION
-                </span>
-
 
                 <h1 id="pdx-name">
                     Hydrating Daily Face Moisturizer
@@ -2997,10 +1749,7 @@
 
 </main>
 
-<!-- =====================================
-     DAILY HYDRATION CTA SECTION
-     GLOW & GRACE
-===================================== -->
+<!-- DAILY HYDRATION CTA SECTION GLOW & GRACE -->
 
 <section class="pdx-cta">
 
@@ -3050,6 +1799,7 @@
   
 
 </main>
+
 <!--footer-->
 
 <footer class="footer">
@@ -3178,10 +1928,7 @@
 
 <script>
 
-/* =========================================
-   GLOW & GRACE
-   DYNAMIC PRODUCT DETAILS
-========================================= */
+/*  GLOW & GRACE  DYNAMIC PRODUCT DETAILS */
 
 const productsData = {
 

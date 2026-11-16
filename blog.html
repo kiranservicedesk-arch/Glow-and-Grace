@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="blog.css">
 
     <script src="main.js"></script>
-    <script src="blog.js"></script>
+    <script src="blog.js" defer></script>
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -22,7 +22,7 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!--HEADER-->
 
 <header class="header">
 
@@ -94,17 +94,10 @@
 
 </header>
 
-
-<!-- ================= HERO SECTION ================= -->
-
 <main>
-    <!-- =========================================
-     BLOG PAGE - HERO SECTION
-========================================= -->
 
-<!-- =====================================
-     BLOG PAGE - HERO BANNER
-===================================== -->
+
+<!--BLOG PAGE-HERO BANNER-->
 
 <section class="blog-hero">
 
@@ -131,7 +124,7 @@
 
             <div class="blog-hero-buttons">
 
-                <a href="#latest-articles" class="blog-hero-btn">
+                <a href="blog-details.html" class="blog-hero-btn">
                     Explore Articles
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -274,15 +267,13 @@
 
 
 
-<!-- =====================================
-     BLOG SECTION 3 - LATEST ARTICLES
-===================================== -->
+<!--BLOG SECTION 3 - LATEST ARTICLES-->
 
 <section class="blog-latest-articles" id="latest-articles-grid">
 
     <div class="latest-articles-container">
 
-        <!-- SECTION HEADING -->
+    
 
         <div class="latest-heading">
 
@@ -587,9 +578,7 @@
 </section>
 
 
-<!-- =========================================
-     CUSTOMER RATINGS & REVIEWS SECTION
-========================================= -->
+<!--CUSTOMER RATINGS & REVIEWS SECTION-->
 
 <section class="customer-reviews" id="customer-reviews">
 
@@ -757,31 +746,28 @@
 </section>
 
 
-<!-- =====================================
-     BLOG PAGE FINAL CTA
-     GLOW & GRACE
-===================================== -->
 
-<section class="blog-final-cta">
+<!--BLOG CTA SECTION-->
+
+<section class="blog-cta">
 
     <div class="blog-cta-container">
 
         <div class="blog-cta-content">
 
-            <span class="blog-cta-eyebrow">
-                YOUR SKINCARE JOURNEY
+            <span class="blog-cta-label">
+                YOUR SKINCARE JOURNEY STARTS HERE
             </span>
 
             <h2>
-                Make Time for
-                <span>Your Skin.</span>
+                Ready to Give Your Skin
+                <span>The Care It Deserves?</span>
             </h2>
 
             <p>
-                Beautiful skin starts with understanding,
-                consistency and the right care. Explore our
-                skincare collection and discover simple ways
-                to make every day a little more nourishing.
+                Explore expert skincare tips, discover your
+                perfect routine, and embrace healthy,
+                naturally glowing skin every day.
             </p>
 
             <div class="blog-cta-buttons">
@@ -791,7 +777,7 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
 
-                <a href="skincare.html" class="blog-cta-secondary">
+                <a href="skin-quiz.html" class="blog-cta-secondary">
                     Discover Your Skin Type
                 </a>
 
@@ -799,17 +785,15 @@
 
         </div>
 
-        <div class="blog-cta-visual">
+        <div class="blog-cta-decoration">
 
-            <div class="blog-cta-image">
-                <img src="Images/bgcta1.jpg"
-                     alt="Skincare essentials and beauty journal">
+            <div class="blog-cta-circle">
+                <i class="fas fa-spa"></i>
             </div>
 
-            <div class="blog-cta-image-caption">
-                <span>01 / SELF-CARE</span>
-                <span>EVERYDAY RITUALS</span>
-            </div>
+            <span class="blog-cta-small-text">
+                GLOW NATURALLY
+            </span>
 
         </div>
 
@@ -820,8 +804,9 @@
 
 
 
+
 </main>
-<!-- ================= FOOTER ================= -->
+<!--FOOTER-->
 
 <footer class="footer">
 
@@ -945,10 +930,5 @@
     </div>
 
 </footer>
-
-
-<!-- JAVASCRIPT -->
-
-
 </body>
 </html>

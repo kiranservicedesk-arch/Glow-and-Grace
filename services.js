@@ -11,9 +11,7 @@ function goToSkinConcerns() {
         behavior: "smooth"
     });
 }
-// =========================================
-// SKIN CONCERNS SELECTION
-// =========================================
+// SKIN CONCERNS SELECTION // 
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -53,9 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// =========================================
-// CONTINUE TO NEXT SECTION
-// =========================================
+
+// CONTINUE TO NEXT SECTION //
 
 function goToSkinHabits() {
 
@@ -68,9 +65,8 @@ function goToSkinHabits() {
     }
 }
 
-// =========================================
-// SECTION 4 - SKIN HABITS NAVIGATION
-// =========================================
+
+// SECTION 4 - SKIN HABITS NAVIGATION // 
 
 function goToSkinPreferences() {
 
@@ -110,9 +106,8 @@ function goToSkinPreferences() {
     }
 }
 
-// =========================================
-// SECTION 5 - VALIDATE PREFERENCES
-// =========================================
+
+// SECTION 5 - VALIDATE PREFERENCES //
 
 function generateSkinResult() {
 
@@ -134,8 +129,6 @@ function generateSkinResult() {
         }
     }
 
-    // At least one ingredient is optional.
-    // Move to the results section.
     const resultsSection = document.getElementById("skin-results");
 
     if (resultsSection) {
@@ -144,9 +137,8 @@ function generateSkinResult() {
         });
     }
 }
-// =========================================
-// SECTION 6 - GENERATE PERSONALIZED RESULTS
-// =========================================
+
+// SECTION 6 - GENERATE PERSONALIZED RESULTS //
 
 function generateSkinResult() {
 
@@ -168,7 +160,7 @@ function generateSkinResult() {
         }
     }
 
-    // Get answers from previous sections
+    // Get answers from previous sections //
     const getValue = (selector) => {
         return document.querySelector(selector)?.value || "Not available";
     };
@@ -216,7 +208,7 @@ function generateSkinResult() {
         )
     ].map(item => item.value);
 
-    // Display profile
+    // Display profile//
     const profileResults = {
         resultSkinType: skinType,
         resultAge: age,
@@ -238,7 +230,7 @@ function generateSkinResult() {
         }
     });
 
-    // Display selected concerns
+    // Display selected concerns//
     const concernContainer = document.getElementById("resultConcerns");
 
     concernContainer.replaceChildren();
@@ -251,7 +243,7 @@ function generateSkinResult() {
         });
     }
 
-    // Display ingredient interests
+    
     const ingredientContainer = document.getElementById("resultIngredients");
 
     ingredientContainer.replaceChildren();
@@ -264,7 +256,7 @@ function generateSkinResult() {
         });
     }
 
-    // Generate morning and evening routines
+
     const morning = [
         {
             title: "Gentle Cleanser",
@@ -279,7 +271,7 @@ function generateSkinResult() {
         }
     ];
 
-    // Skin type recommendations
+    
     if (skinType === "Dry") {
         morning.push({
             title: "Hydrating Serum",
@@ -340,7 +332,7 @@ function generateSkinResult() {
         });
     }
 
-    // Goal-based recommendations
+    
     if (goal === "Hydrated Skin") {
         morning.push({
             title: "Hydration Focus",
@@ -373,13 +365,13 @@ function generateSkinResult() {
         });
     }
 
-    // Sunscreen is included in every morning routine
+    
     morning.push({
         title: "Broad-Spectrum Sunscreen",
         description: "Finish with SPF 30 or higher. Reapply as directed, especially outdoors."
     });
 
-    // Display routine steps
+    
     displayRoutine("morningRoutineList", morning);
     displayRoutine("eveningRoutineList", evening);
 
@@ -420,9 +412,8 @@ function generateSkinResult() {
 }
 
 
-// =========================================
-// HELPER - DISPLAY RESULT TAGS
-// =========================================
+
+// HELPER - DISPLAY RESULT TAGS//
 
 function addResultTag(container, text) {
 
@@ -435,9 +426,8 @@ function addResultTag(container, text) {
 }
 
 
-// =========================================
-// HELPER - DISPLAY ROUTINE
-// =========================================
+
+// HELPER - DISPLAY ROUTINE//
 
 function displayRoutine(containerId, items) {
 
@@ -469,10 +459,7 @@ function displayRoutine(containerId, items) {
     });
 }
 
-
-// =========================================
-// HELPER - DISPLAY PERSONALIZED TIPS
-// =========================================
+// HELPER - DISPLAY PERSONALIZED TIPS//
 
 function displayTips(tips) {
 
@@ -498,9 +485,7 @@ function displayTips(tips) {
 }
 
 
-// =========================================
-// RETAKE SKIN QUIZ
-// =========================================
+// RETAKE SKIN QUIZ//
 
 function restartSkinQuiz() {
 

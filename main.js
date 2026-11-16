@@ -19,34 +19,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setActiveNavigation() {
 
-        const currentPage = window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase();
+        if (!navLinks) return;
 
+        // Get current page URL
+        let currentPath = window.location.pathname
+            .toLowerCase()
+            .replace(/\/+$/, "");
+
+        let currentPage = currentPath.split("/").pop() || "home";
+
+        // Support both .html and extensionless Netlify URLs
         const pageMap = {
+
             "": "home",
+            "home": "home",
+            "index": "home",
             "index.html": "home",
+            "home1": "home",
+            "home1.html": "home",
+            "home2": "home",
             "home2.html": "home",
+
+            "about": "about",
             "about.html": "about",
+
+            "skincare": "skincare",
             "skincare.html": "skincare",
+            "services": "skincare",
+            "services.html": "skincare",
+            "skin-quiz": "skincare",
+            "skin-quiz.html": "skincare",
+
+            "products": "products",
             "products.html": "products",
+            "product-details": "products",
+            "product-details.html": "products",
+
+            "blog": "blog",
             "blog.html": "blog",
+            "blogs": "blog",
+            "blogs.html": "blog",
+            "blog-details": "blog",
+            "blog-details.html": "blog",
+
+            "contact": "contact",
             "contact.html": "contact"
+
         };
 
         const activePage = pageMap[currentPage] || "";
 
+
         // Remove previous active classes
-        document.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.classList.remove("active");
-            link.removeAttribute("aria-current");
+        navLinks.querySelectorAll("a, button").forEach(function (item) {
+
+            item.classList.remove("active");
+            item.removeAttribute("aria-current");
+
         });
 
-        // Highlight matching navigation link
-        document.querySelectorAll(".nav-links a[data-page]").forEach(function (link) {
 
-            if (link.dataset.page === activePage) {
+        // Check every navigation link
+        navLinks.querySelectorAll("a[data-page]").forEach(function (link) {
+
+            let linkPage = link.getAttribute("data-page");
+
+            if (!linkPage) return;
+
+            linkPage = linkPage.toLowerCase().trim();
+
+            // Normalize navigation categories
+            const normalizedLinkPage = pageMap[linkPage] || linkPage;
+
+            if (
+                normalizedLinkPage === activePage &&
+                activePage !== "home"
+            ) {
 
                 link.classList.add("active");
                 link.setAttribute("aria-current", "page");
@@ -55,7 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        // Home dropdown active for both home pages
+
+        // Highlight Home dropdown button on Home pages
         if (activePage === "home" && homeButton) {
 
             homeButton.classList.add("active");
@@ -63,8 +112,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
+        // Highlight Home dropdown when Home 1 or Home 2 is selected
+        if (activePage === "home" && dropdown) {
+
+            dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
+
+                const href = link.getAttribute("href");
+
+                if (!href) return;
+
+                const linkPath = new URL(href, window.location.origin)
+                    .pathname
+                    .toLowerCase()
+                    .replace(/\/+$/, "");
+
+                const linkPage = linkPath.split("/").pop() || "home";
+
+                const normalizedPage = pageMap[linkPage] || linkPage;
+
+                if (normalizedPage === "home") {
+
+                    const currentFile = currentPage.replace(".html", "");
+                    const dropdownFile = linkPage.replace(".html", "");
+
+                    if (currentFile === dropdownFile) {
+
+                        link.classList.add("active");
+                        link.setAttribute("aria-current", "page");
+
+                    }
+
+                }
+
+            });
+
+        }
+
     }
 
+
+    // Run active navigation
     setActiveNavigation();
 
 
@@ -91,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
         // Close dropdown when clicking outside
         document.addEventListener("click", function (event) {
 
@@ -106,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         });
+
 
         // Close dropdown after selecting a page
         dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
@@ -133,7 +223,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuButton && navLinks) {
 
         menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation menu");
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
 
         menuButton.addEventListener("click", function (event) {
 
@@ -148,7 +243,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             menuButton.setAttribute(
                 "aria-label",
-                isOpen ? "Close navigation menu" : "Open navigation menu"
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
             );
 
             menuButton.innerHTML = isOpen
@@ -157,12 +254,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
         // Close mobile menu after clicking page links
         navLinks.querySelectorAll("a").forEach(function (link) {
 
             link.addEventListener("click", function () {
 
-                // Keep dropdown open/close behavior separate
                 if (link.classList.contains("home-btn")) {
                     return;
                 }
@@ -185,6 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         });
+
 
         // Close mobile menu when clicking outside
         document.addEventListener("click", function (event) {
@@ -252,14 +350,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     // Restore saved direction
-    const savedDirection = localStorage.getItem("glowGraceDirection");
+    const savedDirection = localStorage.getItem(
+        "glowGraceDirection"
+    );
 
     if (savedDirection === "rtl" || savedDirection === "ltr") {
+
         root.dir = savedDirection;
+
     }
 
     updateDirectionButton();
+
 
     if (rtlButton) {
 
@@ -321,14 +425,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     // Restore saved theme
-    const savedTheme = localStorage.getItem("glowGraceTheme");
+    const savedTheme = localStorage.getItem(
+        "glowGraceTheme"
+    );
 
     if (savedTheme === "dark" || savedTheme === "light") {
+
         root.dataset.theme = savedTheme;
+
     }
 
     updateThemeButton();
+
 
     if (themeButton) {
 
@@ -351,9 +461,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // =====================================
-    // CONTACT FORM
-    // =====================================
+
+    /* CONTACT FORM*/ 
 
     const contactForm = document.getElementById("contactForm");
     const formMessage = document.getElementById("formMessage");

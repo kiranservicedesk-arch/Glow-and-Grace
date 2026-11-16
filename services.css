@@ -1,8 +1,5 @@
 
-/* ==========================================
-   SKIN QUIZ HERO
-   GLOW & GRACE
-========================================== */
+/* SKIN QUIZ HERO GLOW & GRACE*/
 
 /* LIGHT THEME */
 
@@ -308,9 +305,7 @@
     }
 }
 
-/* =========================================
-   SECTION 2 - PERSONAL SKIN PROFILE
-========================================= */
+/* SECTION 2 - PERSONAL SKIN PROFILE */
 
 :root,
 [data-theme="light"] {
@@ -341,7 +336,7 @@
 
 .skin-profile-section {
     width: 100%;
-    padding: 85px 7%;
+    padding: 85px 8%;
     background: var(--profile-bg);
     transition: background 0.3s ease;
 }
@@ -572,9 +567,7 @@
     }
 }
 
-/* =========================================
-   SECTION 3 - SKIN CONCERNS
-========================================= */
+/*SECTION 3 - SKIN CONCERNS */
 
 :root,
 [data-theme="light"] {
@@ -900,9 +893,7 @@
     }
 }
 
-/* =========================================
-   SECTION 4 - SKIN LIFESTYLE & HABITS
-========================================= */
+/*  SECTION 4 - SKIN LIFESTYLE & HABITS */
 
 :root,
 [data-theme="light"] {
@@ -1236,9 +1227,7 @@
     }
 }
 
-/* =========================================
-   SECTION 5 - SKINCARE PREFERENCES
-========================================= */
+/*  SECTION 5 - SKINCARE PREFERENCES */
 
 :root,
 [data-theme="light"] {
@@ -1581,6 +1570,7 @@
     justify-content: space-between;
     gap: 15px;
     margin-top: 30px;
+    color: #167D78;
 }
 
 .preferences-back-btn,
@@ -1656,9 +1646,7 @@
     }
 }
 
-/* =========================================
-   SECTION 6 - PERSONALIZED SKIN RESULTS
-========================================= */
+/* SECTION 6 - PERSONALIZED SKIN RESULTS */
 
 :root,
 [data-theme="light"] {
@@ -2209,9 +2197,7 @@
     }
 }
 
-/* =========================================
-   SECTION 7 - NEXT SKINCARE STEPS
-========================================= */
+/*  SECTION 7 - NEXT SKINCARE STEPS */
 
 .next-skincare-section {
 

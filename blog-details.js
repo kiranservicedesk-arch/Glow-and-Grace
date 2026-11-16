@@ -1,14 +1,10 @@
-/* =========================================
-   GLOW & GRACE - DYNAMIC BLOG DETAILS
-========================================= */
+/*GLOW & GRACE - DYNAMIC BLOG DETAILS*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
     const articles = {
 
-        /* =====================================
-           FEATURED ARTICLES - SECTION 2
-        ===================================== */
+        /*FEATURED ARTICLES - SECTION 2*/
 
         "skin-type": {
             title: "The Ultimate Guide to Understanding Your Skin Type",
@@ -149,9 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
 
-        /* =====================================
-           LATEST ARTICLES - SECTION 3
-        ===================================== */
+        /*LATEST ARTICLES - SECTION 3*/
 
         "sunscreen": {
             title: "Why Daily Sunscreen Deserves a Place in Your Routine",
@@ -352,9 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
 
-        /* =====================================
-           EDITOR'S PICKS - SECTION 4
-        ===================================== */
+        /*EDITOR'S PICKS - SECTION 4*/
 
         "skincare-routine": {
             title: "The Art of Building a Skincare Routine That Works",
@@ -492,18 +484,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* =====================================
-       GET SELECTED ARTICLE
-    ===================================== */
+    /*GET SELECTED ARTICLE*/
 
     const params = new URLSearchParams(window.location.search);
     const articleKey = params.get("article");
     const article = articles[articleKey];
 
 
-    /* =====================================
-       HTML ELEMENTS
-    ===================================== */
+    /*HTML ELEMENTS*/
 
     const hero = document.querySelector(".bd-hero");
     const title = document.getElementById("articleTitle");
@@ -518,9 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const related = document.getElementById("relatedArticles");
 
 
-    /* =====================================
-       INVALID ARTICLE
-    ===================================== */
+    /*INVALID ARTICLE*/
 
     if (!article) {
 
@@ -563,9 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================
-       UPDATE HERO AND ARTICLE DETAILS
-    ===================================== */
+    /*UPDATE HERO AND ARTICLE DETAILS*/
 
     document.title = article.title + " | Glow & Grace";
 
@@ -584,9 +568,7 @@ document.addEventListener("DOMContentLoaded", function () {
     conclusion.textContent = article.conclusion;
 
 
-    /* =====================================
-       GENERATE ARTICLE SECTIONS
-    ===================================== */
+    /*GENERATE ARTICLE SECTIONS*/
 
     sections.innerHTML = article.sections.map(function (section) {
 
@@ -607,9 +589,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }).join("");
 
 
-    /* =====================================
-       GENERATE RELATED ARTICLES
-    ===================================== */
+    /*GENERATE RELATED ARTICLES*/
 
     const allKeys = Object.keys(articles);
 

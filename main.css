@@ -1,10 +1,11 @@
 
 /* =========================================
    GLOW & GRACE
-   HEADER AND FOOTER CSS ONLY
+   HEADER AND FOOTER CSS
    Primary: Soft Rose Pink
    Secondary: Deep Teal
 ========================================= */
+
 
 /* =========================================
    GLOBAL SETTINGS
@@ -123,7 +124,10 @@ img {
     gap: 12px;
 }
 
-/* BRAND */
+
+/* =========================================
+   BRAND
+========================================= */
 
 .brand,
 .footer-brand {
@@ -202,14 +206,25 @@ img {
     color: var(--secondary-color);
 }
 
-/* NAV UNDERLINE */
 
-.nav-links > li:not(.dropdown) > a {
+/* =========================================
+   NAVIGATION UNDERLINE
+   FIXED FOR NETLIFY + LOCALHOST
+========================================= */
+
+/* Normal navigation links */
+
+.nav-links > li:not(.dropdown) > a,
+.nav-links > a {
     position: relative;
+    display: inline-block;
     padding-block: 10px;
 }
 
-.nav-links > li:not(.dropdown) > a::after {
+/* Underline base */
+
+.nav-links > li:not(.dropdown) > a::after,
+.nav-links > a::after {
     content: "";
 
     position: absolute;
@@ -220,12 +235,29 @@ img {
     height: 2px;
 
     background: var(--primary-color);
+
     transition: width .25s ease;
 }
 
+/* Hover underline */
+
 .nav-links > li:not(.dropdown) > a:hover::after,
-.nav-links > li:not(.dropdown) > a.active::after {
+.nav-links > a:hover::after {
     width: 100%;
+}
+
+/* Active underline */
+
+.nav-links > li:not(.dropdown) > a.active::after,
+.nav-links > a.active::after {
+    width: 100%;
+}
+
+/* Active link color */
+
+.nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 
@@ -247,7 +279,7 @@ img {
     position: relative;
 }
 
-/* HOME ACTIVE UNDERLINE */
+/* Home underline */
 
 .dropdown > .home-btn::after {
     content: "";
@@ -260,6 +292,7 @@ img {
     height: 2px;
 
     background: var(--primary-color);
+
     transition: width .25s ease;
 }
 
@@ -268,7 +301,17 @@ img {
     width: 100%;
 }
 
-/* DROPDOWN MENU */
+/* Home active color */
+
+.dropdown > .home-btn.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
 
 .dropdown-menu {
     display: none;
@@ -305,7 +348,7 @@ img {
     color: var(--secondary-color);
 }
 
-/* JAVASCRIPT DROPDOWN ACTIVE */
+/* Dropdown open */
 
 .dropdown.active .dropdown-menu {
     display: block;
@@ -369,7 +412,7 @@ img {
 
 
 /* =========================================
-   PRIMARY BUTTON
+   PRIMARY AND SECONDARY BUTTONS
 ========================================= */
 
 .primary-btn,
@@ -759,6 +802,25 @@ html[dir="rtl"] .footer-bottom p {
         width: 100%;
     }
 
+
+    /* MOBILE ACTIVE LINK */
+
+    .nav-links > li:not(.dropdown) > a.active {
+        color: var(--secondary-color);
+        background: var(--soft-bg);
+        border-radius: 6px;
+    }
+
+    .nav-links > li:not(.dropdown) > a.active::after {
+        width: 100%;
+    }
+
+    .dropdown > .home-btn.active {
+        color: var(--secondary-color);
+        background: var(--soft-bg);
+        border-radius: 6px;
+    }
+
     .menu-toggle {
         display: inline-flex;
     }
@@ -808,6 +870,7 @@ html[dir="rtl"] .footer-bottom p {
     .toggles .primary-btn {
         display: none;
     }
+
 
     /* FOOTER */
 

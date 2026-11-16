@@ -1,6 +1,5 @@
-/* =====================================
-   CONTACT PAGE HERO SECTION
-===================================== */
+
+/*CONTACT PAGE HERO SECTION*/
 
 .contact-hero {
     position: relative;
@@ -9,32 +8,45 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255, 245, 247, 0.96),
-            rgba(255, 245, 247, 0.75),
-            rgba(255, 245, 247, 0.25)
-        ),
-        url("Images/hc1.jpg");
-
+    background-image: url("Images/hc1.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 
     overflow: hidden;
 }
+
+/*CONTENT ONLY OVERLAY*/
 
 .contact-hero-content {
     position: relative;
     z-index: 2;
 
-    width: 90%;
-    max-width: 1200px;
+    width: fit-content;
+    max-width: 720px;
+    margin: 0 0 0 5%;
 
-    padding: 100px 0;
+    padding: 40px 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: rgba(255, 245, 247, 0.76);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 30px rgba(30, 40, 40, 0.10);
 }
+
+
+/*SUBTITLE*/
 
 .contact-subtitle {
     display: inline-block;
@@ -47,6 +59,9 @@
 
     margin-bottom: 22px;
 }
+
+
+/*HEADING*/
 
 .contact-hero h1 {
     max-width: 650px;
@@ -66,6 +81,9 @@
     color: var(--primary-color);
 }
 
+
+/*PARAGRAPH*/
+
 .contact-hero p {
     max-width: 570px;
 
@@ -76,6 +94,9 @@
 
     margin-bottom: 32px;
 }
+
+
+/*BUTTONS*/
 
 .contact-hero-buttons {
     display: flex;
@@ -102,9 +123,13 @@
     transition: 0.3s ease;
 }
 
+
+/* PRIMARY BUTTON */
+
 .contact-primary-btn {
     background: var(--secondary-color);
     color: #ffffff;
+
     border: 1px solid var(--secondary-color);
 }
 
@@ -113,8 +138,12 @@
     border-color: var(--secondary-dark);
 }
 
+
+/* SECONDARY BUTTON */
+
 .contact-secondary-btn {
     color: var(--text-color);
+
     border: 1px solid var(--primary-color);
     background: transparent;
 }
@@ -125,28 +154,44 @@
 }
 
 
-/* =====================================
-   DARK THEME
-===================================== */
+/*DARK THEME*/
 
 [data-theme="dark"] .contact-hero {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(16, 27, 27, 0.96),
-            rgba(16, 27, 27, 0.82),
-            rgba(16, 27, 27, 0.45)
-        ),
-        url("Images/contact-hero.jpg");
-
+    background-image: url("Images/hc1.jpg");
     background-size: cover;
     background-position: center;
 }
 
+[data-theme="dark"] .contact-hero-content {
+    background: rgba(16, 27, 27, 0.80);
 
-/* =====================================
-   RESPONSIVE
-===================================== */
+    border: 1px solid rgba(229, 160, 181, 0.25);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .contact-subtitle {
+    color: #55B8AE;
+}
+
+[data-theme="dark"] .contact-hero h1 {
+    color: #EDF5F2;
+}
+
+[data-theme="dark"] .contact-hero h1 span {
+    color: #E5A0B5;
+}
+
+[data-theme="dark"] .contact-hero p {
+    color: #B5C6C1;
+}
+
+[data-theme="dark"] .contact-secondary-btn {
+    color: #EDF5F2;
+}
+
+
+/*TABLET RESPONSIVE*/
 
 @media (max-width: 768px) {
 
@@ -156,7 +201,9 @@
     }
 
     .contact-hero-content {
-        padding: 80px 0;
+        max-width: 85%;
+        margin-left: 4%;
+        padding: 35px 30px;
     }
 
     .contact-hero h1 {
@@ -169,10 +216,24 @@
 
 }
 
+
+/*MOBILE RESPONSIVE*/
+
 @media (max-width: 480px) {
 
     .contact-hero {
         min-height: 500px;
+        background-position: 60% center;
+    }
+
+    .contact-hero-content {
+        width: auto;
+        max-width: 92%;
+
+        margin-left: 4%;
+        margin-right: 4%;
+
+        padding: 28px 20px;
     }
 
     .contact-hero h1 {
@@ -180,6 +241,8 @@
     }
 
     .contact-hero-buttons {
+        width: 100%;
+
         align-items: stretch;
         flex-direction: column;
     }
@@ -191,12 +254,11 @@
 
 }
 
-/* =====================================
-   SECTION 2 - CONTACT INFORMATION
-===================================== */
+
+/*SECTION 2 - CONTACT INFORMATION*/
 
 .contact-info-section {
-    padding: 100px 5%;
+    padding: 100px 8%;
     background: var(--bg-color);
 }
 
@@ -358,13 +420,11 @@
 }
 
 
-/* =====================================
-   CONTACT INTRO SECTION
-===================================== */
+/*CONTACT INTRO SECTION*/
 
 .contact-intro {
     width: 100%;
-    padding: 90px 5%;
+    padding: 90px 8%;
     background: var(--bg-color);
     box-sizing: border-box;
 }
@@ -561,12 +621,10 @@
 }
 
 
-/* =====================================
-   SECTION 3 - CONTACT FORM
-===================================== */
+/*SECTION 3 - CONTACT FORM*/
 
 .contact-form-section {
-    padding: 100px 5%;
+    padding: 100px 8%;
     background: var(--soft-bg);
 }
 
@@ -690,7 +748,7 @@
 .contact-input-group textarea {
 
     width: 100%;
-    padding: 14px 16px;
+    padding: 14px 8%;
 
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -803,12 +861,10 @@
 
 }
 
-/* =====================================
-   SECTION 4 - OUR LOCATION
-===================================== */
+/*SECTION 4 - OUR LOCATION*/
 
 .contact-location-section {
-    padding: 100px 5%;
+    padding: 100px 8%;
     background: var(--bg-color);
 }
 

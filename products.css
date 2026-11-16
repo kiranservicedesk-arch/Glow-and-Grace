@@ -1,8 +1,5 @@
 
-/* ==========================================
-   PRODUCTS HERO - LIGHT & DARK THEME
-   Glow & Grace
-========================================== */
+/* PRODUCTS HERO - LIGHT & DARK THEME Glow & Grace*/
 
 /* LIGHT THEME */
 
@@ -512,10 +509,7 @@
 }
 
 
-/* ==========================================
-   BESTSELLING PRODUCTS
-   GLOW & GRACE
-========================================== */
+/*  BESTSELLING PRODUCTS GLOW & GRACE */
 
 /* LIGHT THEME */
 
@@ -759,10 +753,7 @@
 }
 
 
-/* =========================================
-   SECTION 4 - SHOP BY SKIN TYPE
-   GLOW & GRACE
-========================================= */
+/* SECTION 4 - SHOP BY SKIN TYPE  GLOW & GRACE */
 
 .shop-skin-section {
 
@@ -1131,9 +1122,7 @@
     }
 
 }
-/* =========================================
-   SECTION 5 - SHOP BY INGREDIENTS
-========================================= */
+/*  SECTION 5 - SHOP BY INGREDIENTS */
 
 .shop-ingredients-section {
 
@@ -1500,9 +1489,7 @@
 }
 
 
-/* =========================================
-   PRODUCTS PAGE - NEWSLETTER & CTA
-========================================= */
+/*  PRODUCTS PAGE - NEWSLETTER & CTA */
 
 .products-newsletter-section {
 
@@ -1538,11 +1525,7 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-
-
-/* =========================================
-   CTA BANNER
-========================================= */
+ 
 
 /* GLOW & GRACE DIFFERENCE SECTION */
 
@@ -1673,9 +1656,7 @@
 
 
 
-/* =========================================
-   NEWSLETTER CONTENT
-========================================= */
+/* NEWSLETTER CONTENT */
 
 .products-newsletter-content {
 
@@ -1887,9 +1868,7 @@
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* RESPONSIVE */
 
 @media (max-width: 800px) {
 

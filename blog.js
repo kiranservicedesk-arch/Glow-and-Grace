@@ -1,7 +1,5 @@
 
-/* =========================================
-   CUSTOMER REVIEWS - REVEAL ANIMATION
-========================================= */
+/*CUSTOMER REVIEWS - REVEAL ANIMATION*/
 
 document.addEventListener("DOMContentLoaded", function () {
 

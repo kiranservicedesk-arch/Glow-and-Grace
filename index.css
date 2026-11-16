@@ -1,8 +1,5 @@
 
-/* =========================================
-   HOME 1 - HERO SECTION
-   GLOW & GRACE
-========================================= */
+/*HOME 1 - HERO SECTION */
 
 .home1-hero {
     width: 100%;
@@ -243,9 +240,7 @@
     opacity: 0.7;
 }
 
-/* =========================================
-   TABLET RESPONSIVE
-========================================= */
+/*TABLET RESPONSIVE*/
 
 @media (max-width: 992px) {
 
@@ -274,9 +269,7 @@
     }
 }
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* MOBILE RESPONSIVE*/
 
 @media (max-width: 768px) {
 
@@ -373,13 +366,11 @@
 /* shop by category*/
 
 
-/* =========================================
-   HOME 1 - SHOP BY CATEGORY
-========================================= */
+/*HOME 1 - SHOP BY CATEGORY*/
 
 .shop-category-section {
     width: 100%;
-    padding: 85px 5%;
+    padding: 85px 8%;
     background: var(--soft-bg, #FFF5F7);
 }
 
@@ -543,7 +534,7 @@
 }
 
 .view-category-btn:hover {
-    background: var(--primary-dark, #BD718B);
+   background: var(--secondary, #167D78);
     transform: translateY(-3px);
 }
 
@@ -594,13 +585,11 @@
 /* Best seller section */
 
 
-/* =========================================
-   HOME 1 - BESTSELLING PRODUCTS
-========================================= */
+/*HOME 1 - BESTSELLING PRODUCTS*/
 
 .bestselling-section {
     width: 100%;
-    padding: 85px 5%;
+    padding: 85px 8%;
     background: var(--bg-color, #ffffff);
 }
 
@@ -750,7 +739,7 @@
 }
 
 .bestselling-view-btn:hover {
-    background: var(--primary-dark, #BD718B);
+     background: var(--secondary, #167D78);
     transform: translateY(-3px);
 }
 
@@ -828,13 +817,11 @@
 
 
 
-/* =========================================
-   HOME 1 - SHOP BY SKIN CONCERN
-========================================= */
+/*HOME 1 - SHOP BY SKIN CONCERN*/
 
 .skin-concern-section {
     width: 100%;
-    padding: 85px 5%;
+    padding: 85px 8%;
     background: var(--soft-bg, #FFF5F7);
 }
 
@@ -1024,7 +1011,7 @@
 }
 
 .concern-quiz-btn:hover {
-    background: var(--primary-dark, #BD718B);
+    background: var(--secondary, #167D78);
     transform: translateY(-3px);
 }
 
@@ -1078,14 +1065,12 @@
     }
 
 }
-/* why choose us section */
-/* =========================================
-   SECTION 06 - WHY CHOOSE GLOW & GRACE
-========================================= */
+
+/*SECTION 06*/
 
 .why-choose-section {
     width: 100%;
-    padding: 85px 20px;
+    padding: 85px 8%;
     background: var(--soft-bg, #FFF5F7);
     transition: background 0.3s ease;
 }
@@ -1304,13 +1289,11 @@
 }
 /*skin care tips*/
 
-/* =========================================
-   SECTION 07 - SKINCARE TIPS & ADVICE
-========================================= */
+/*SECTION 07 - SKINCARE TIPS & ADVICE*/
 
 .skincare-tips-section {
     width: 100%;
-    padding: 85px 20px;
+    padding: 85px 8%;
     background: var(--bg-color, #fff);
     transition: background 0.3s ease;
 }
@@ -1583,13 +1566,11 @@
 }
 /* newsletter section and CTA section*/
 
-/* =========================================
-   SECTION 08 - NEWSLETTER & CTA
-========================================= */
+/*SECTION 08 - NEWSLETTER & CTA*/
 
 .newsletter-cta-section {
     width: 100%;
-    padding: 80px 20px;
+    padding: 80px 8%;
     background: var(--soft-bg, #FFF5F7);
     transition: background 0.3s ease;
 }
@@ -1599,156 +1580,6 @@
     margin: 0 auto;
 }
 
-/* =========================================
-   NEWSLETTER BOX
-========================================= */
-
-/*.newsletter-box {
-    max-width: 850px;
-    margin: 0 auto 55px;
-    padding: 55px 35px;
-    text-align: center;
-    background: var(--surface, #fff);
-    border: 1px solid var(--border, #f0dce3);
-    border-radius: 16px;
-}
-
-/* NEWSLETTER ICON 
-
-.newsletter-icon {
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--soft-bg, #FFF5F7);
-    color: var(--primary-dark, #BD718B);
-    font-size: 25px;
-}
-
-/* HEADING *
-
-.newsletter-subtitle {
-    display: block;
-    color: var(--secondary, #167D78);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-}
-
-.newsletter-box h2 {
-    color: var(--text-color, #222);
-    font-size: 34px;
-    line-height: 1.35;
-    margin-bottom: 15px;
-}
-
-.newsletter-box h2 span {
-    color: var(--primary-dark, #BD718B);
-}
-
-.newsletter-box > p {
-    color: var(--text-muted, #777);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* NEWSLETTER FORM *
-
-.newsletter-form {
-    max-width: 570px;
-    margin: 28px auto 0;
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-}
-
-.newsletter-input-group {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0 16px;
-    background: var(--bg-color, #fff);
-    border: 1px solid var(--border, #e5e5e5);
-    border-radius: 7px;
-}
-
-.newsletter-input-group i {
-    color: var(--text-muted, #777);
-    font-size: 15px;
-}
-
-.newsletter-input-group input {
-    width: 100%;
-    min-width: 0;
-    padding: 15px 0;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--text-color, #222);
-    font-size: 14px;
-}
-
-.newsletter-input-group input::placeholder {
-    color: var(--text-muted, #999);
-}
-
-.newsletter-form button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 23px;
-    border: none;
-    border-radius: 7px;
-    background: var(--secondary, #167D78);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.newsletter-form button:hover {
-    background: var(--secondary-dark, #105F5B);
-    transform: translateY(-2px);
-}
-
-/* PRIVACY NOTE *
-
-.newsletter-box .newsletter-note {
-    margin-top: 17px;
-    font-size: 12px;
-    color: var(--text-muted, #888);
-}
-
-.newsletter-note i {
-    color: var(--secondary, #167D78);
-    margin-right: 5px;
-}
-
-/* FORM MESSAGE *
-
-.newsletter-message {
-    min-height: 20px;
-    margin-top: 12px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.newsletter-message.success {
-    color: var(--secondary, #167D78);
-}
-
-.newsletter-message.error {
-    color: #d14343;
-}
-*/
 
 /* PERSONALIZED ROUTINE SECTION */
 
@@ -1908,9 +1739,7 @@
     }
 }
 
-/* =========================================
-   BEAUTY CTA BOX
-========================================= */
+/* CTA */
 
 .beauty-cta-box {
     position: relative;
@@ -1984,7 +1813,7 @@
 
 .cta-shop-btn {
     background: #fff;
-    color: var(--primary-dark, #BD718B);
+    background: var(--secondary, #167D78);
 }
 
 .cta-shop-btn:hover {
@@ -2034,9 +1863,7 @@
     font-size: 100px;
 }
 
-/* =========================================
-   TABLET RESPONSIVE
-========================================= */
+/*TABLET RESPONSIVE*/
 
 @media (max-width: 768px) {
 
@@ -2067,9 +1894,7 @@
 
 }
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/*MOBILE RESPONSIVE*/
 
 @media (max-width: 576px) {
 
