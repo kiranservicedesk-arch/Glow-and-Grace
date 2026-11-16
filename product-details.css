@@ -1,4 +1,6 @@
-/*PRODUCT DETAILS HERO */
+/* =====================================
+   PRODUCT DETAILS HERO
+===================================== */
 
 .pd-hero {
     width: 100%;
@@ -235,7 +237,10 @@
 }
 
 
-/*DYNAMIC PRODUCT DETAILS PAGE GLOW & GRACE*/
+/* =========================================
+   DYNAMIC PRODUCT DETAILS PAGE
+   GLOW & GRACE
+========================================= */
 
 .pdx-page {
     background: var(--bg-color);
@@ -837,7 +842,9 @@
 
 }
 
-/*DAILY HYDRATION CTA SECTION*/
+/* =====================================
+   DAILY HYDRATION CTA SECTION
+===================================== */
 
 .pdx-cta {
     padding: 85px 20px;
