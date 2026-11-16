@@ -1998,3 +1998,134 @@
 .product-details-link:hover i {
     transform: translateX(5px);
 }
+
+
+/* PRODUCTS PAGE CTA SECTION */
+
+.products-cta {
+    width: 100%;
+    padding: 85px 7%;
+    background: #FFF3F6;
+}
+
+.products-cta-container {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.products-cta-content {
+    max-width: 760px;
+    margin: auto;
+}
+
+.products-cta-tagline {
+    display: inline-block;
+    color: #167D78;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.products-cta-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.25;
+    color: #263B3A;
+    margin-bottom: 20px;
+}
+
+.products-cta-content h2 span {
+    color: #D98FA5;
+}
+
+.products-cta-content p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #687977;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.products-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.products-cta-primary,
+.products-cta-secondary {
+    min-height: 50px;
+    padding: 14px 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.products-cta-primary {
+    background: #167D78;
+    color: #FFFFFF;
+    border: 1px solid #167D78;
+}
+
+.products-cta-primary:hover {
+    background: #105F5B;
+    border-color: #105F5B;
+    transform: translateY(-3px);
+}
+
+.products-cta-secondary {
+    background: transparent;
+    color: #167D78;
+    border: 1px solid #D98FA5;
+}
+
+.products-cta-secondary:hover {
+    background: #D98FA5;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .products-cta {
+        padding: 65px 6%;
+    }
+
+    .products-cta-content h2 {
+        font-size: 32px;
+    }
+
+    .products-cta-content p {
+        font-size: 14px;
+    }
+
+    .products-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .products-cta-primary,
+    .products-cta-secondary {
+        width: 100%;
+    }
+}
+
